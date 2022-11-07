@@ -1,0 +1,27 @@
+body {
+  background: #d3d3ff;
+}
+
+@media screen and (min-width: 576px) {
+  body {
+    background: #f08080;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background: #90ee90;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    background: #ffa07a;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    background: #c074c0;
+  }
+}
