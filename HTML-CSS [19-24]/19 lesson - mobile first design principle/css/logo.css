@@ -1,0 +1,19 @@
+.logo {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  width: 5.5em;
+  text-align: center;
+}
+
+.logo--xl {
+  font-size: 5rem;
+}
+
+.logo--sm {
+  font-size: 1rem;
+}
+
+.logo--xs {
+  font-size: 0.7rem;
+}
