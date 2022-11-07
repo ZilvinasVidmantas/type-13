@@ -25,15 +25,10 @@
   
   .navbar__links-list {
     display: inline-flex;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
     gap: 2rem;
   }
 
   .navbar__links-list a {
-    text-decoration: none;
-    color: black;
     text-transform: uppercase;
     font-size: 0.8rem;
   }
