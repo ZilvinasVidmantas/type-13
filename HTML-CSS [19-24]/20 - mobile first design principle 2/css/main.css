@@ -1,0 +1,13 @@
+@import './abstracts/variables.css';
+
+@import './reset.css';
+
+@import './utilities/typography.css';
+@import './utilities/spacing.css';
+
+@import './components/logo.css';
+@import './components/navbar.css';
+@import './components/button.css';
+
+@import './sections/hero.css';
+@import './sections/about.css';
