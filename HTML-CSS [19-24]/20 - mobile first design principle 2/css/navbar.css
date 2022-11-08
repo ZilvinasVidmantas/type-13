@@ -1,0 +1,51 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.navbar__navigation {
+  display: none;
+}
+
+.navbar__icon {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    width: 768px;
+    margin: auto;
+  }
+
+  .navbar__icon.bi-list {
+    display: none;
+  }
+
+  .navbar__navigation {
+    display: block;
+  }
+
+  .navbar__links-list {
+    display: inline-flex;
+    gap: 2rem;
+  }
+
+  .navbar__links-list a {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    width: 992px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .navbar {
+    width: 1200px;
+  }
+}
