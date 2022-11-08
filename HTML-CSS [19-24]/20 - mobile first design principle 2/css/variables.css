@@ -1,6 +1,19 @@
 :root {
+  /* colors */
   --color-white: #fff;
   --color-white-darken: #eee;
+
+  /* font-colors */
   --color-text-black: #151515;
   --color-text-grey: #aaa;
+
+  /* spacing */
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 3rem;
+  --spacing-auto: auto;
 }
+
