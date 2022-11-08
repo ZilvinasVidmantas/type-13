@@ -4,7 +4,7 @@ html {
 }
 
 .h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
 }
 
 .h2 {
@@ -15,7 +15,59 @@ html {
   font-size: 1.5rem;
 }
 
-.subtile {
-  font-size: 1.2rem;
+.h4 {
+  font-size: 1.25rem;
+}
+
+.h5 {
+  font-size: 1rem;
+}
+
+.h6 {
+  font-size: 0.8rem;
+}
+
+.text-grey {
   color: var(--color-text-grey);
+}
+
+.fw-light {
+  font-weight: 300;
+}
+
+.fw-normal {
+  font-weight: 400;
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+.title {
+  display: inline-flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.title:after {
+  content: '';
+  display: inline-block;
+  font-weight: 600;
+  height: 2px;
+  width: 220px;
+  background-color: var(--color-text-black);
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-text-grey);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.text-center {
+  text-align: center;
 }
