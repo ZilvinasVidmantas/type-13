@@ -1,11 +1,17 @@
 :root {
+  /* fonts */
+  --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
   /* colors */
   --color-white: #fff;
   --color-white-darken: #eee;
+  --color-black: #151515;
+  --color-black-lighten: #353535;
+  --color-grey: #aaa;
 
   /* font-colors */
-  --color-text-black: #151515;
-  --color-text-grey: #aaa;
+  --color-text-black: var(--color-black);
+  --color-text-grey: var(--color-grey);
 
   /* spacing */
   --spacing-0: 0;
