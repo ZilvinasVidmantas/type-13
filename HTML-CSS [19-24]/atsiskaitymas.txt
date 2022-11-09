@@ -1,6 +1,6 @@
-Padaryti Plain CSS/SCSS (bre framework'ų) projektą jūsų pasirinktą tema;
+Padaryti Plain CSS/SCSS (be framework'ų) projektą jūsų pasirinktą tema;
 
-  iki 11-21 13:00 atsiųsti tokiu formatu:
+  iki 11-14 8:00 atsiųsti tokiu formatu:
     vardas-pavarde.zip
   1. Bent 3 atskiri puslapiai arba didelės sekcijos
   2. Navbar (sticky arba fixed)
