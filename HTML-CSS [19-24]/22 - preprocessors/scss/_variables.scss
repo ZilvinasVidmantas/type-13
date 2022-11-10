@@ -4,11 +4,13 @@ $lighten-percentage: 9%;
 $opacity-percentage: 17%;
 
 // colors
-$primary: cyan;
+$primary: blue;
 $secondary: #059105;
-$danger: #b92121;
+// [1.]
+$danger: #b121b9;
 $warning: #c9c945;
-$info: magenta;
+// [1.]
+$dark: #000;
 
 // Border radius: 
 $border-radius: 0;
@@ -18,6 +20,9 @@ $border-radius-xl: 0;
 $border-radius-2xl: 0;
 $border-radius-pill: 0;
 
+// [2.]
+// Spinners
+$spinner-width: 3rem;
 
 // rako-reikšės rinkinys MAP
 $colors: (
@@ -34,3 +39,5 @@ $grey-darken: darken($grey, 11%);
 
 // spacing
 $rem: 16px;
+
+$modifier-prefix: "--";
