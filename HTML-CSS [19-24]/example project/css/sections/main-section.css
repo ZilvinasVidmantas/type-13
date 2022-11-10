@@ -56,7 +56,6 @@
   background: var(--color-black);
 }
 
-/* Nuo 1000px */
 @media screen and (min-width: 800px) {
   .main {
     background-image: url(../../img/hero-lg.jpg);
