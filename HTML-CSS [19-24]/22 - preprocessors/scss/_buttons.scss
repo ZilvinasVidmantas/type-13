@@ -1,0 +1,24 @@
+.btn {
+  display: inline-block;
+  padding: 0.5em 0.9em; 
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// 1.   primary     #2568ff;
+// 2.   secondary   #385293;
+// 3.   danger      #9e1616;
+// 4.   warning     #c9c945;
+@each $color-name, $color-value in $colors {
+  .btn--#{$color-name} {
+    background-color: $color-value;
+    border: 2px solid darken($color-value, $darken-percentage);
+    border-radius: 2px;
+
+    &:hover {
+      background-color: lighten($color-value, $lighten-percentage);
+    }
+  }
+}

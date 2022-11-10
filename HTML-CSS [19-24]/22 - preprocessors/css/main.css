@@ -1,11 +1,46 @@
-body {
-  background: #252525;
+.btn {
+  display: inline-block;
+  padding: 0.5em 0.9em;
+  color: #eee;
 }
-body main {
-  padding: 48px;
+.btn:hover {
+  cursor: pointer;
 }
-body section {
-  padding: 32px;
+
+.btn--primary {
+  background-color: #2568ff;
+  border: 2px solid #0049ec;
+  border-radius: 2px;
+}
+.btn--primary:hover {
+  background-color: #5388ff;
+}
+
+.btn--secondary {
+  background-color: #059105;
+  border: 2px solid #035b03;
+  border-radius: 2px;
+}
+.btn--secondary:hover {
+  background-color: #07bd07;
+}
+
+.btn--danger {
+  background-color: #b92121;
+  border: 2px solid #891919;
+  border-radius: 2px;
+}
+.btn--danger:hover {
+  background-color: #da2e2e;
+}
+
+.btn--warning {
+  background-color: #c9c945;
+  border: 2px solid #a6a630;
+  border-radius: 2px;
+}
+.btn--warning:hover {
+  background-color: #d3d369;
 }
 
 /*# sourceMappingURL=main.css.map */

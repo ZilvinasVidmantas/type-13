@@ -1,0 +1,26 @@
+// configuration vars
+$darken-percentage: 11%;
+$lighten-percentage: 9%;
+$opacity-percentage: 17%;
+
+// colors
+$primary: #2568ff;
+$secondary: #059105;
+$danger: #b92121;
+$warning: #c9c945;
+
+// rako-reikšės rinkinys MAP
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  danger: $danger,
+  warning: $warning,
+);
+
+$white: #eee;
+$black: #252525;
+$grey: #999;
+$grey-darken: darken($grey, 11%);
+
+// spacing
+$rem: 16px;

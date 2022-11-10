@@ -1,14 +1,23 @@
-$black: #252525;
-$spacer: 16px;
+@import './variables';
+@import './buttons';
 
-body {
-  background: $black;
+// chaning selectors examples
+// body {
+//   background: $black;
 
-  main {
-    padding: 3 * $spacer;
-  }
+//   main {
+//     padding: 3 * $rem;
+//   }
 
-  section {
-    padding: 2 * $spacer;
-  }
-}
+//   section {
+//     padding: 2 * $rem;
+//   }
+// }
+
+// .nav-link {
+//   height: 30px;
+//   background: $grey;
+//   &:hover {
+//     background: $grey-darken;
+//   }
+// }
