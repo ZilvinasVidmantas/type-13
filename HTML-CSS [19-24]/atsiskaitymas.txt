@@ -11,4 +11,4 @@ Padaryti Plain CSS/SCSS (be framework'ų) projektą jūsų pasirinktą tema;
   7. Panaudotas Flex
   8. CSS stiliai parašyti mažomis perpanaudojamomis klasėmis ir pagal BEM standartą
   9. Panaudoti Grid
-  10. Responsive layout, bent 3 breakpontai.
+  10. Responsive layout, bent 3 breakpontai - 3 dydžiai.
