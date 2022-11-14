@@ -1,0 +1,21 @@
+Primityvūs kintamieji:
+  * Number: 1, -94.55, 13, -7, ...
+  * String: 'Labas', 'Kepenys', '-7', ...
+  * Boolean: true || false;
+  * undefined: undefined; kintamojo reikšmė yra nepasakyta;
+  * null: null; kintamojo reikšmė neegzistuoja;
+  * Symbol: 'Labas', 'Kepenys', '-7', ... - spacialus tipas saugoti unikalioms reikšmėms,
+    suteikiant nurodytą stringą kaip atpažinimo ženklinimą su slapta 
+    ir nepakeičiama unikalia reikšme
+
+
+Nurodos tipo kitamieji:
+* Objektai - rakto-reikšmės poros (MAP duomenų struktūros atmaina JavaScript kalboje)
+  * Array - reikšmių rinkinys numeruojant duomenis indeksai nuo 0
+  * Date - Datos tipas
+  * Function - Perpanaudojanas kodo blokas, kuris turi būt deklaruojamas ir
+    vėliau kviečiamas pagal programos poreikius bet kokį kiekį kartų. Kviečiant
+    funkciją jai galima perduoti argumentus, taip įgalinant skirtingą funkcijos
+    vykdymo elgseną ar rezultatų variacijas.
+  * ...
+  * Custom Prototypes - Vartotojo sukurti duomenų tipai;
