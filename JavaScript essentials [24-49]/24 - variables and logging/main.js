@@ -1,4 +1,6 @@
-let suma = 6 + 8;
+let a;
+a = 15;
 
-// dar vienas commit
-console.log(suma);
+console.log('a:', a);
+a = 16;
+console.log('a:', a);
