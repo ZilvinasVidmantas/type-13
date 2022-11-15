@@ -19,7 +19,7 @@ console.group('Primityvių kintamųjų kopijavimas');
 {
   const a = 7;
   console.log('a:', a);
-  let b = a;
+  let b = a; // Padaroma kopija
   console.log('Padaryta a kintamojo kopija b:', b);
   b = 'Pakeista';
   console.log('Pakeista b kintamojo reikšmė...');
@@ -39,7 +39,7 @@ console.group('Nuorodos(objekto) tipo kintamųjų kopijavimas');
   // a[1] -> 2
   // a[2] -> 3
   console.log('a:', a);
-  let b = a;
+  let b = a; // Sukuriamas naujas pavadinimas rodantis į tą pačią atminties vietą
   console.log('Padaryta a kintamojo kopija b:', b);
   b[0] = 'Pakeista';
   b[1] = 'Pakeista';
