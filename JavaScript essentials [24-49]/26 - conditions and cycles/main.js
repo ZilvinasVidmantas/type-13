@@ -22,7 +22,7 @@
 
 /*
   Papildomai parašykite logiką, kuri pasakytų, kiek reikėtų tokių indų, kad sutalpinti daiktus.
-  TODO: P.S.: žinoma jog daiktai niekada neviršys 5000g.
+  TODO: P.S.: žinoma jog vienas daiktas niekada neviršys 5000g.
 */
 
 {
