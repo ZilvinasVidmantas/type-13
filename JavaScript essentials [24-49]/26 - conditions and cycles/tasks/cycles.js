@@ -4,13 +4,14 @@
     * su for ciklu
 */
 
+// masyvas naudojamas tik nuo 20. užduoties
 const numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 
 console.groupCollapsed('WHILE');
 {
   console.groupCollapsed('1. Sukurkite ciklą kuris 5 kartus atspausdintų "Sveikas Pasauli"');
   {
-
+    
   }
   console.groupEnd();
   console.groupCollapsed('2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <');
