@@ -4,11 +4,11 @@
 
 //-- Salygų eiliškumas sudėtinėse salygose:
 /*
-salyga1 || salyga2 || ... || salygaN. Operatorius '||' tikrina salygas iš kairės į dešinę, jeigu nors viena salyga yra
-true - sekančios nėra tikrinamos.
- 
-salyga1 && salyga2 && ... && salygaN. Operatorius '&&' tikrina salygas iš kairės į dešinę, jeigu nors viena salyga yra
-false - sekančios nėra tikrinamos. 
+  salyga1 || salyga2 || ... || salygaN. Operatorius '||' tikrina salygas iš kairės į dešinę, jeigu nors viena salyga yra
+  true - sekančios nėra tikrinamos.
+  
+  salyga1 && salyga2 && ... && salygaN. Operatorius '&&' tikrina salygas iš kairės į dešinę, jeigu nors viena salyga yra
+  false - sekančios nėra tikrinamos. 
 */
 
 console.group('if salyginis sakinys')
