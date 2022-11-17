@@ -1,12 +1,12 @@
 variables-and-logging.js
 data-types.js
 operators.js
+cycles.js
+conditions.js
 objects.js
 arrays.js
-conditions.js
-array-methods.js
 functions.js
-cycles.js
+array-methods.js
 sorting.js
 array-iterative-methods.js
 destructurization.js
