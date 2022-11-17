@@ -1,5 +1,16 @@
-const a = 7;
-const b = -17;
-const c = 22;
+console.log('vaziuojam');
 
-console.log({ a, b, c });
+function double(number) {
+  return number * 2;
+}
+
+function printRed(text) {
+  console.log(`%c${text}`, 'color: red; font-size: 30px;');
+
+  /* return undefined */ 
+}
+
+printRed('mano šortai')
+printRed('buvo 2')
+printRed('Nieko gero')
+printRed('nerandu')
