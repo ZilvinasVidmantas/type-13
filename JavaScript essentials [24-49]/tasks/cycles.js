@@ -43,32 +43,32 @@ console.groupCollapsed('WHILE');
 
   }
   console.groupEnd();
-  console.groupCollapsed('8. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki -3. Naudojant >');
+  console.groupCollapsed('8. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('9. Sukurkite ciklą kuris atspausdintų nuo -5 iki iki -10. Naudojant >');
+  console.groupCollapsed('9. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('10. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki 1. Naudojant >');
+  console.groupCollapsed('10. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('11. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki -3. Naudojant >=');
+  console.groupCollapsed('11. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >=');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('12. Sukurkite ciklą kuris atspausdintų nuo -5 iki iki -10. Naudojant >=');
+  console.groupCollapsed('12. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >=');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki 1. Naudojant >=');
+  console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >=');
   {
 
   }
@@ -158,7 +158,7 @@ console.groupCollapsed('WHILE');
 
   }
   console.groupEnd();
-  console.groupCollapsed('31. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės, pradedant prieš prieš paskutiniu');
+  console.groupCollapsed('31. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės, pradedant prieš paskutiniu');
   {
 
   }
@@ -203,32 +203,32 @@ console.groupCollapsed('FOR');
 
   }
   console.groupEnd();
-  console.groupCollapsed('8. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki -3. Naudojant >');
+  console.groupCollapsed('8. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('9. Sukurkite ciklą kuris atspausdintų nuo -5 iki iki -10. Naudojant >');
+  console.groupCollapsed('9. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('10. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki 1. Naudojant >');
+  console.groupCollapsed('10. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('11. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki -3. Naudojant >=');
+  console.groupCollapsed('11. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >=');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('12. Sukurkite ciklą kuris atspausdintų nuo -5 iki iki -10. Naudojant >=');
+  console.groupCollapsed('12. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >=');
   {
 
   }
   console.groupEnd();
-  console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki iki 1. Naudojant >=');
+  console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >=');
   {
 
   }
@@ -318,7 +318,7 @@ console.groupCollapsed('FOR');
 
   }
   console.groupEnd();
-  console.groupCollapsed('31. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės, pradedant prieš prieš paskutiniu');
+  console.groupCollapsed('31. Atspausdinkite <numbers> masyvo kas antrą elementą iš dešinės, pradedant prieš paskutiniu');
   {
 
   }
