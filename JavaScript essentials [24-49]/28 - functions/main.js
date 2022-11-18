@@ -26,10 +26,25 @@ console.groupEnd();
 console.group('3. Parašykite funkciją, kuri atspausdintų bet kokį string"ą, bet kokį kiekį kartų, askirtus tarpu - vienoje eilutėje');
 {
   // funkcijos deklaracija
+  function printStringNTimesInRow(text, n) {
+    const textWithSpace = text + ' ';
+    const result = textWithSpace.repeat(n);
+
+    console.log(result);
+  }
 
   // bandomieji kintamieji
+  const str1 = 'labas';
+  const n1 = 3;
+  const str2 = 'ate';
+  const n2 = 2;
+  const str3 = 'gyvate';
+  const n3 = 7;
 
-  // rezultatų spausdinimas 
+  // rezultatų spausdinimas
+  printStringNTimesInRow(str1, n1);
+  printStringNTimesInRow(str2, n2);
+  printStringNTimesInRow(str3, n3);
 }
 console.groupEnd();
 console.group('4. Parašykite funkciją, kuri atspausdintų bet kokį string"ą, bet kokį kiekį kartų, askirtus programuotojo nurodytu simboliu - vienoje eilutėje');
