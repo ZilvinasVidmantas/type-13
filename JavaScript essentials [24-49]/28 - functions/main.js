@@ -56,7 +56,7 @@ console.group('4. Parašykite funkciją, kuri atspausdintų bet kokį string"ą,
   // rezultatų spausdinimas 
 }
 console.groupEnd();
-console.group('5. Parašykite funkciją, kuri grąžintų bet kokį string"ą, bet kokį kiekį kartų, askirtus programuotojo nurodytu simboliu - vienoje eilutėje');
+console.group('5. Parašykite funkciją, kuri grąžintų bet kokį string"ą, bet kokį kiekį kartų, skirtingose eilutėse');
 {
   // funkcijos deklaracija
 
