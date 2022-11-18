@@ -1,23 +1,54 @@
-const numbers = [5, 3, -5, -9, 4, 6, 5, 1, 12, 2];
+// Sukūrusa funkciją, reikia įrodyti, jog ji veikia gerai skirtingais atvejais, todėlprivalote pateikti
+//  mažiausiai 2 funkcijos panaudojimo pavyzdžius.
 
-function numericASC (number1, number2) {
-  if(number1 > number2) return 1;
-  if(number2 > number1) return -1;
+console.group('1. Parašykite funkciją, kuri atspausdintų bet kokį string"ą 2 kartus, skirtingose eilutėse');
+{
+  // funkcijos deklaracija
 
-  return 0;
+  // bandomieji kintamieji
+
+  // rezultatų spausdinimas 
+
 }
+console.groupEnd();
+console.group('2. Parašykite funkciją, kuri grąžintų bet kokį string"ą 5 kartus, atskirtus tarpu');
+{
+  // funkcijos deklaracija
 
-function numericDESC(number1, number2) {
-  if(number1 > number2) return -1;
-  if(number2 > number1) return 1;
-  
-  return 0;
+  // bandomieji kintamieji
+
+  // funkcijos iškvietimai ir saugojimai į rezultatus
+
+  // rezultatų spausdinimas 
+
 }
+console.groupEnd();
+console.group('3. Parašykite funkciją, kuri atspausdintų bet kokį string"ą, bet kokį kiekį kartų, askirtus tarpu - vienoje eilutėje');
+{
+  // funkcijos deklaracija
 
-const sortedNumbersASC = Array.from(numbers).sort(numericASC);
-const sortedNumbersDESC = Array.from(numbers).sort(numericDESC);
+  // bandomieji kintamieji
 
-console.log(sortedNumbersASC);
-console.log(sortedNumbersDESC);
+  // rezultatų spausdinimas 
+}
+console.groupEnd();
+console.group('4. Parašykite funkciją, kuri atspausdintų bet kokį string"ą, bet kokį kiekį kartų, askirtus programuotojo nurodytu simboliu - vienoje eilutėje');
+{
+  // funkcijos deklaracija
 
+  // bandomieji kintamieji
 
+  // rezultatų spausdinimas 
+}
+console.groupEnd();
+console.group('5. Parašykite funkciją, kuri grąžintų bet kokį string"ą, bet kokį kiekį kartų, askirtus programuotojo nurodytu simboliu - vienoje eilutėje');
+{
+  // funkcijos deklaracija
+
+  // bandomieji kintamieji
+
+  // funkcijos iškvietimai ir saugojimai į rezultatus
+
+  // rezultatų spausdinimas 
+}
+console.groupEnd();

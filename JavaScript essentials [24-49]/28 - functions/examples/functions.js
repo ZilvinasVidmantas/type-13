@@ -5,7 +5,7 @@
 //  - vykdymo blokas -> tai perpanaudojama kodo dalis, kuri įvyks kiekvieną kartą, kuomet bus iškviečiama funkcija
 //  - funkcijos grąžinimas -> tai reikšmės grąžinimas į funkcijos iškvietimo vietą. Tai įvykdoma panaudojant direktyvą 'return';
 // Aprašius funkciją galime ją iškviesti, parašius funkcijos pavadinimą ir šalia jo paprastus skliaustelius. Jeigu reikia, skliausteliuose galime
-// perduoti kintamuosius, kurie vadinami argumentais.
+// perduoti reikšmes, kurie vadinami argumentais.
 // Funkcijos kvietinys/iškvietimas gali (bet ne visada) grąžinti reikšmę, kuri bus įrašyta/grąžinta į funkcijos iškvietimo vietą. 
 
 // Funkcijos aprašas ( function declaration)
@@ -19,7 +19,7 @@ function nueitasKelias(greitis, laikas) // → funkcijos antraštė ( function h
 
 //                 ↓  funkcijos iškvietimas (function invocation/ function call)
 const kelias1 = nueitasKelias(5, 20); // kelias1 kintamojo reikšmė bus tokia, kokią GRĄŽINS funkcijos kvietinys "nueitasKelias(5, 20)".
-//                            ↑  ↑ - kintamieji kurie perduodami funkcijai vadinami argumentais.
+//                            ↑  ↑ - kintamieji kurie perduodami funkcijai, iškvietimo metu, vadinami ARGUMENTAIS.
 console.log(kelias1);
 console.log(nueitasKelias(7, 10));
 console.log(nueitasKelias(9, 18));
