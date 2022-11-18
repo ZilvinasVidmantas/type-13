@@ -5,8 +5,10 @@ iki 11-21: +1 balas prie kontrolinio;
   * object-tasks.js
   
 iki 11-28: +1 balas prie kontrolinio;
+  # ↓↓  Naudojant for, while, if, else ir kitus programavimo konstruktus ↓↓ 
   * functions-tasks-2.js
   * function-tasks-array-iterative-1.js
+  # ↓↓ Tas pačias užduotis atlikema su masyvo iteraciniais metodais ↓↓
   * functions-tasks-2.js -> functions-tasks-2-array-methods.js, naudojant 
     * Array.prototype.forEach
     * Array.prototype.map

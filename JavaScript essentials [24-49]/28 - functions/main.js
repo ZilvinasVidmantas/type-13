@@ -75,15 +75,12 @@ console.group('4. Parašykite funkciją, kuri atspausdintų bet kokį string"ą,
   // funkcijos deklaracija
   function printStringNTimesInRow(text, n, separator) {
     let result = '';
+    const addon = text + separator;
 
     for (let i = 0; i < n; i += 1) {
-      const isLastElement = i === n - 1;
-
-      result += text;
-      if (!isLastElement) {
-        result += separator;
-      }
+      result += addon;
     }
+    result = result.substring(0, result.length - 1);
 
     console.log(result);
   }
@@ -108,8 +105,8 @@ console.group('5. Parašykite funkciją, kuri grąžintų bet kokį string"ą, b
     let result = '';
 
     for (let i = 0; i < n; i += 1) {
-      const isLastElement = i === n - 1;
-      result += text + (isLastElement ? '' : '\n');
+      const isNotLastElement = i !== n - 1;
+      result += text + (isNotLastElement ? '\n' : '');
     }
 
     return result;
