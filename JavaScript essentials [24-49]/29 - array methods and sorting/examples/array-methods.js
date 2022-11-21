@@ -67,7 +67,7 @@ console.group('Masyvo elementų kopijavimas ir iškirpimas');
       Tam kad nurodyti kurią masyvo dalį iškerpate, naudojami 3 parametrai
       1 - nuo kurio indekso iškirpti [ĮSKAITANT]
       2 - KIEK elementų iškirpti
-      3, 4, 5, ... N - kuom pakeisti/papildyti išpirptą dalį
+      3, 4, 5, ... N - kuom pakeisti/papildyti iškirptą dalį
     */
     const numbersOriginal = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     console.log('pradinis masyvas', numbersOriginal);
