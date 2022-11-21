@@ -87,7 +87,7 @@ console.group('Masyvo elementų kopijavimas ir iškirpimas');
     {
       const numbers = numbersOriginal.slice();
       const removedElements = numbers.splice(-2, 2, 11, 11);
-      const removedElements2 = numbers.splice( 2, 2, 12, 12, 12, 12, 12);
+      const removedElements2 = numbers.splice(2, 2, 12, 12, 12, 12, 12);
 
       console.log('pradinis masyvas, po pakeitimo', numbers);
       console.log('pašalinta dalis, 2 nuo galo, 2 elementai', removedElements);
@@ -121,8 +121,10 @@ console.group('Masyvų sujungimas');
   const numbers1 = [7, 7, 7];
   const numbers2 = [5, 5, 5];
 
+  // Apjungimas saugomas naujuose masyvuose nekeičiant orginalių duomenų
   const joinedNumbers2 = numbers1.concat(numbers2);
-  const joinedNumbers1 = [ ...numbers1.slice(), ...numbers2.slice()];
+  const joinedNumbers1 = [...numbers1, ...numbers2];
+  // Keičiamas orginalus masyvas | apjungimo rezultatas bus numbers1 masyve
   numbers1.splice(numbers1.length, 0, ...numbers2);
   numbers1.push(...numbers2);
 

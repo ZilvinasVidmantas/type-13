@@ -48,8 +48,14 @@ console.group('Rikiavimas');
         let codeB
         for (let j = 0; j < lettersCodeReplacmentsLT.length; j++) {
           const letterLT = lettersCodeReplacmentsLT[j].letter;
-          if (letterA === letterLT) codeA = lettersCodeReplacmentsLT[j].code;
-          if (letterB === letterLT) codeB = lettersCodeReplacmentsLT[j].code;
+          if (letterA === letterLT) {
+            codeA = lettersCodeReplacmentsLT[j].code;
+            break;
+          }
+          if (letterB === letterLT) {
+            codeB = lettersCodeReplacmentsLT[j].code;
+            break;
+          }
         }
         const charCodeA = codeA === undefined ? letterA.charCodeAt(0) : codeA;
         const charCodeB = codeB === undefined ? letterB.charCodeAt(0) : codeB;
@@ -57,7 +63,7 @@ console.group('Rikiavimas');
       }
       return 0;
     }
-    
+
     function byLTOrderDESC(a, b) {
       return -1 * byLTOrderASC(a, b);
     }
@@ -67,7 +73,6 @@ console.group('Rikiavimas');
     const namesDESC = names.slice();
     namesASC.sort(byLTOrderASC);
     namesDESC.sort(byLTOrderDESC);
-    namesDESC.reverse();
 
     const numbers = [1, 5, -9, 8, -6, 7, 8, -6, -1];
     const numbersASC = numbers.slice();
