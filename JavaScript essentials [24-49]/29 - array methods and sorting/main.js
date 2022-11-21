@@ -78,8 +78,15 @@ console.group('3. Padauginti masyvo narius iš jų index\'o (vietos masyve) ir i
 console.log('---');
 {
   function mulArrElementsByIndex(arr) {
-    // ... code
+    const result = [];
+    for (let i = 0; i < arr.length; i += 1) {
+      result[i] = arr[i] * i;
+      // result.push(arr[i] * i);
+    }
+
+    return result;
   }
+
   console.log({
     numbers,
     result: mulArrElementsByIndex(numbers)
