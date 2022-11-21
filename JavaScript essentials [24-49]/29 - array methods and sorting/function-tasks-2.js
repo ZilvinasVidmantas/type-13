@@ -109,7 +109,7 @@ console.log();
 console.group("8. Visas neigiamas vertes masyve padaryti teigiamomis ir išsaugoti į naują masyvą");
 {
   function arrAbsoluteValues(arr) {
-    // ... code
+  
   }
 
   console.log('---');

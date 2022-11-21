@@ -78,13 +78,13 @@ console.group('3. Padauginti masyvo narius iš jų index\'o (vietos masyve) ir i
 console.log('---');
 {
   function mulArrElementsByIndex(arr) {
-    const result = [];
+    const resultArr = [];
     for (let i = 0; i < arr.length; i += 1) {
-      result[i] = arr[i] * i;
+      resultArr[i] = arr[i] * i;
       // result.push(arr[i] * i);
     }
 
-    return result;
+    return resultArr;
   }
 
   console.log({
@@ -158,9 +158,37 @@ console.log();
 
 console.group("8. Visas neigiamas vertes masyve padaryti teigiamomis ir išsaugoti į naują masyvą");
 {
-  function arrAbsoluteValues(arr) {
-    // ... code
-  }
+  // function arrAbsoluteValues(arr) {
+  //   const resultArr = [];
+  //   for (let i = 0; i < arr.length; i += 1) {
+  //     let element = arr[i];
+  //     if (element < 0) element *= -1;
+
+  //     resultArr.push(element);
+  //   }
+
+  //   return resultArr;
+  // }
+
+  // function arrAbsoluteValues(arr) {
+  //   const resultArr = [];
+  //   for (let i = 0; i < arr.length; i += 1) {
+  //     let element = arr[i] < 0 ? arr[i] * -1: arr[i];
+
+  //     resultArr.push(element);
+  //   }
+
+  //   return resultArr;
+  // }
+
+  // function arrAbsoluteValues(arr) {
+  //   const resultArr = [];
+  //   for (let i = 0; i < arr.length; i += 1) {
+  //     resultArr.push(arr[i] < 0 ? arr[i] * -1: arr[i]);
+  //   }
+
+  //   return resultArr;
+  // }
 
   console.log('---');
   console.log({
