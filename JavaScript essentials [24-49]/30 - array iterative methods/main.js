@@ -38,9 +38,20 @@ const flats = [
 
 // Kiekvienai užduočiai padeklaruokite funkciją, kurią panaudosite kviestami metodą Array.prototype.forEach
 
+// Jeigu reikia kaupti/formuoti reikšmę su kiekvienu masyvo elementu, naudojama metodologija:
+// 1. padeklaruojamas pradinis elementas
+// 2. Pradedamas ciklas
+//  2.1 Kiekviena iteracija papildo/keičia padeklaruotą kintamajį [1.]
+// 3. atliekamas galutinis formavimas
+// 4. grąžinama/spausdinama reikšmė 
+
 console.group('1. Atspausdinkite kiekvieno buto adresą su miestu');
 {
+  function printAdressWithCity(flat) {
+    console.log(`${flat.address}, ${flat.city}`);
+  }
 
+  flats.forEach(printAdressWithCity);
 }
 console.groupEnd();
 
@@ -58,7 +69,26 @@ console.groupEnd();
 
 console.group('4. Atspausdinkite kiekvieno buto eilutes, kuriose kableliais atskirti kambarių pavadinimai');
 {
+  function printFlatRoomNames(flat) {
+    // 1.
+    let flatRoomsString = '';
 
+    // 2.1
+    function appendRoomTitleName(room) {
+      flatRoomsString += room.title + ', ';
+    }
+
+    // 2.
+    flat.rooms.forEach(appendRoomTitleName);
+
+    // 3.
+    flatRoomsString = flatRoomsString.slice(0, -2);
+
+    // 4.
+    console.log(flatRoomsString);
+  }
+
+  flats.forEach(printFlatRoomNames)
 }
 console.groupEnd();
 
