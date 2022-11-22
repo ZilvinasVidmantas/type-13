@@ -55,6 +55,15 @@ const people = [
   }
 ];
 console.groupCollapsed('1. Atspausdinkite visus žmones eilutėmis');
+/*
+  <name> <surname> - <sex> <age> <income> <married> <hasCar>
+  pvz.: 
+    Jonas Jonaitis - male 26 1200 false false
+
+  <name> <surname>: is <sex> of age <age>. Earns <income> is <married> and <hasCar>;
+  pvz.: 
+    Jonas Jonaitis - is male of age 26. Earns 1200$ is not married has no car.
+*/
 {
   // ...sprendimas ir spausdinimas
 }
@@ -131,4 +140,3 @@ console.groupCollapsed('13. Suformuokite žmonių masyvą  iš objektų, kuriuos
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
-

@@ -104,8 +104,3 @@ console.group('6. Atspausdinkite kiekvieno buto kvadrato kainą ir adresą forma
 
 }
 console.groupEnd();
-
-
-
-
-
