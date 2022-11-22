@@ -69,6 +69,7 @@ console.groupEnd();
 
 console.group('4. Atspausdinkite kiekvieno buto eilutes, kuriose kableliais atskirti kambarių pavadinimai');
 {
+  
   function printFlatRoomNames(flat) {
     // 1.
     let flatRoomsString = '';
