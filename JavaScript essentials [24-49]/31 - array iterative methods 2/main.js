@@ -57,19 +57,36 @@ console.groupEnd();
 
 console.group('2. Atspausdinkite kiekvieno buto kambarių skaičių');
 {
+  function printFlatRoomCount(flat) {
+    console.log(flat.rooms.length);
+  }
+
+  flats.forEach(printFlatRoomCount);
 
 }
 console.groupEnd();
 
 console.group('3. Atspausdinkite kiekvieno buto bendrą plotą');
 {
+  function printFlatArea(flat) {
+    let flatArea = 0;
 
+    function accumulateFlatAreaWithRoomArea(room) {
+      flatArea += room.area;
+    }
+
+    flat.rooms.forEach(accumulateFlatAreaWithRoomArea);
+
+    console.log(flatArea);
+  }
+
+  flats.forEach(printFlatArea);
 }
 console.groupEnd();
 
 console.group('4. Atspausdinkite kiekvieno buto eilutes, kuriose kableliais atskirti kambarių pavadinimai');
 {
-  
+
   function printFlatRoomNames(flat) {
     // 1.
     let flatRoomsString = '';
@@ -95,12 +112,40 @@ console.groupEnd();
 
 console.group('5. Atspausdinkite kiekvieno buto kvadrato kainą');
 {
+  function printFlatSquarePrice(flat) {
+    let flatArea = 0;
 
+    function accumulateFlatAreaWithRoomArea(room) {
+      flatArea += room.area;
+    }
+
+    flat.rooms.forEach(accumulateFlatAreaWithRoomArea);
+
+    const flatSquarePrice = (flat.price / flatArea).toFixed();
+
+    console.log(flatSquarePrice);
+  }
+
+  flats.forEach(printFlatSquarePrice);
 }
 console.groupEnd();
 
 console.group('6. Atspausdinkite kiekvieno buto kvadrato kainą ir adresą formatu "<address>, <city>: <kvadrato kaina>"');
 {
+  function printFlatSquarePrice(flat) {
+    let flatArea = 0;
 
+    function accumulateFlatAreaWithRoomArea(room) {
+      flatArea += room.area;
+    }
+
+    flat.rooms.forEach(accumulateFlatAreaWithRoomArea);
+
+    const flatSquarePrice = (flat.price / flatArea).toFixed();
+
+    console.log(`${flat.address}, ${flat.city}: ${flatSquarePrice}`);
+  }
+
+  flats.forEach(printFlatSquarePrice);
 }
 console.groupEnd();
