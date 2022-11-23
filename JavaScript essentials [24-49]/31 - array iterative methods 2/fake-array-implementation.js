@@ -36,6 +36,25 @@ const fakeArray = {
     }
 
     return newArr;
+  },
+
+  // Jeigu reikia kaupti/formuoti reikšmę su kiekvienu masyvo elementu, naudojama metodologija:
+  // 1. padeklaruojamas pradinis elementas
+  // 2. Pradedamas ciklas
+  //  2.1 Kiekviena iteracija papildo/keičia padeklaruotą kintamajį [1.]
+  // 3. atliekamas galutinis formavimas
+  // 4. grąžinama/spausdinama reikšmė 
+
+  // 1.
+  reduce(reducer, accumulator = this[0]) {
+    // 2.
+    for (let i = accumulator === undefined ? 1 : 0; i < this.length; i++) {
+      // 2.1
+      accumulator = reducer(accumulator, this[i], i, this);
+    }
+
+    // 4.
+    return accumulator;
   }
 }
 
@@ -71,7 +90,12 @@ console.groupEnd();
 
 console.group('Array.prototype.reduce implementation example');
 {
+  function additionReducer(prevValue, element) {
+    return prevValue + element;
+  }
 
+  const sum = fakeArray.reduce(additionReducer);
+  console.log(sum);
 }
 console.groupEnd();
 
