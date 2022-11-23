@@ -58,24 +58,44 @@ const numbers = [1, 15, 9, -9, -8, -7, 2, 8, 51, 6, 5];
 
 console.group('1. Atrinkti neigiamus skaičius');
 {
+  function isNegative(number) {
+    return number < 0;
+  }
 
+  const numbersNegative = numbers.filter(isNegative);
+  console.log(numbersNegative);
 }
 console.groupEnd();
 
 console.group('2. Atrinkti nelyginius skaičius');
 {
+  function isOdd(number) {
+    return number % 2 === 1;
+  }
 
+  const numbersOdd = numbers.filter(isOdd);
+  console.log(numbersOdd);
 }
 console.groupEnd();
 
 console.group('3. Atrinkti žmones kurių vardas ilgesnis nei 6 raidės');
 {
+  function hasLongName(person) {
+    return person.name.length > 6;
+  }
 
+  const peopleWithLongNames = people.filter(hasLongName);
+  console.table(peopleWithLongNames);
 }
 console.groupEnd();
 
 console.group('4. Atrinkti žmones kurie turi mašiną');
 {
+  function isCarOwner(person) {
+    return person.hasCar;
+  }
 
+  const carOwners = people.filter(isCarOwner);
+  console.table(carOwners);
 }
 console.groupEnd();
