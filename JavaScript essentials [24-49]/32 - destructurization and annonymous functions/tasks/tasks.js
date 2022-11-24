@@ -149,10 +149,12 @@ console.group('9. Apskaičiuokite visų būtų kainos vidurkį,');
 console.groupEnd();
 
 console.group('10. Apskaičiuokite visų būtų kainą už kvadratą');
-// 20 - 20 000;           40 - 40 000; -> 1000
-// 20 - 20 000;           20 - 40 000; -> 1500
-// 20 - 20 000;           30 - 60 000;  80 000/50 -> 1600 // visų būtų kvadrato kaina
-//   1000                   2000                  -> 1500 // butų kvadartų kainų vidurkis
+// 20 - 20 000;           40 - 40 000; -> 60 000 / 60 -> 1000
+//  1000                     1000                     -> 1000
+// 20 - 20 000;           20 - 40 000;                -> 1500
+//  1000                     2000                     -> 1500 
+// 20 - 20 000;           30 - 60 000; -> 80 000/50   -> 1600 // butų kvadrato kaina
+//  1000                    2000                      -> 1500 // butų kvadartų kainų vidurkis
 
 console.groupEnd();
 
