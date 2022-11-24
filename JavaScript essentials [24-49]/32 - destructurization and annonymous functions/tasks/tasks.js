@@ -25,6 +25,7 @@ const flats = [{
     { title: 'virtuvė', area: 18 },
     { title: 'miegamasis', area: 12 },
     { title: 'miegamasis2', area: 16 },
+    { title: 'miegamasis2', area: 19 },
   ],
   city: 'Kaunas',
   price: 120000
@@ -61,7 +62,7 @@ const flats = [{
 console.group('1. Atspausdinkite kiekvieno buto adresą su miestu');
 // '<address>, <city>'
 {
-  function printFullAdress({ address, city }) {
+  const printFullAdress = function ({ address, city }) {
     console.log(`${address}, ${city}`);
   }
 
@@ -102,6 +103,11 @@ console.groupEnd();
 console.group('4. Atrinkite 4 kambarių ir dedesnius butus');
 // [{...}, {...}]
 {
+  const largeFlats = flats.filter(function ({ rooms }) {
+    return rooms.length >= 4;
+  });
+
+  console.table(largeFlats);
 }
 console.groupEnd();
 
@@ -132,3 +138,22 @@ console.group('7. Perforkuokite butus formatu pateiktu komentaruose');
 
 }
 console.groupEnd();
+
+// Papildomai
+console.group('8. Atrinkite butus, kurie turi nors vieną kambarį, didesnį nei 19 kvadratų');
+
+console.groupEnd();
+
+console.group('9. Apskaičiuokite visų būtų kainos vidurkį,');
+
+console.groupEnd();
+
+console.group('10. Apskaičiuokite visų būtų kainą už kvadratą');
+// 20 - 20 000;           40 - 40 000; -> 1000
+// 20 - 20 000;           20 - 40 000; -> 1500
+// 20 - 20 000;           30 - 60 000;  80 000/50 -> 1600 // kvadratų kainų vidurkis
+//   1000                   2000                  -> 1500 // butų kvadartų kainų vidurkis
+
+console.groupEnd();
+
+
