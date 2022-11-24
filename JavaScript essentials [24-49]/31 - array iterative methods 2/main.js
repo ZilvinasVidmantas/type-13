@@ -55,7 +55,6 @@ const people = [
   }
 ];
 
-
 {
   function replacePersonCredentialsToFullname(person) {
     return {
