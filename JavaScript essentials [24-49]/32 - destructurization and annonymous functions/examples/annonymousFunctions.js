@@ -27,6 +27,3 @@ console.log('');
 // Perduodama lambda išraiška anonimiškai. 
 // Apart šio kvietinio, anoniminės lambda išraikos kodo blokas, nebus pasiekiamas jokioje aplinkoje, jokiais raktažodžiais.
 execute(arg1 => console.log('Lambda išraiška, ir jos argumentas:', arg1), 3);
-
-
-
