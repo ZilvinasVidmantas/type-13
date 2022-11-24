@@ -46,9 +46,10 @@ const fakeArray = {
   // 4. grąžinama/spausdinama reikšmė 
 
   // 1.
-  reduce(reducer, accumulator = this[0]) {
+  reduce(reducer, initialValue) {
+    let accumulator = initialValue ?? this[0];
     // 2.
-    for (let i = accumulator === undefined ? 1 : 0; i < this.length; i++) {
+    for (let i = initialValue === undefined ? 1 : 0; i < this.length; i++) {
       // 2.1
       accumulator = reducer(accumulator, this[i], i, this);
     }
