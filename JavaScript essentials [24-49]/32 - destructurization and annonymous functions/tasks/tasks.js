@@ -61,19 +61,40 @@ const flats = [{
 console.group('1. Atspausdinkite kiekvieno buto adresą su miestu');
 // '<address>, <city>'
 {
+  function printFullAdress({ address, city }) {
+    console.log(`${address}, ${city}`);
+  }
+
+  flats.forEach(printFullAdress);
 }
 console.groupEnd();
 
-console.group('2. Sukurkite masyvą iš kiekvieno buto kambarių skaičiaus');
-// [5, 18, 4, ...]
+console.group('2. Sukurkite masyvą iš butų kamarių skaičiaus');
+// [4, 5, 3, 3, 3, 3]
 {
+  function getFlatRoomCount({ rooms }) {
+    return rooms.length;
+  }
 
+  const flatsRoomCount = flats.map(getFlatRoomCount);
+  console.log(flatsRoomCount);
 }
 console.groupEnd();
 
-console.group('3. Suformuokite kiekvieno buto plotų masyvą');
-// [5, 18, 4, ...]
+console.group('3. Suformuokite butų plotų masyvą');
 {
+  function roomAreaReducer(prevArea, { area }) {
+    return prevArea + area;
+  }
+
+  function getFlatArea({ rooms }) {
+    const flatArea = rooms.reduce(roomAreaReducer, 0);
+
+    return flatArea;
+  }
+
+  const flatsAreas = flats.map(getFlatArea);
+  console.log(flatsAreas);
 }
 console.groupEnd();
 
@@ -95,7 +116,7 @@ console.group('6. Atrinkite 3 kambarių butus iš Kauno, kurių kaina mažesnė 
 }
 console.groupEnd();
 
-console.group('7. Permorkuokite butus formatu pateiktu komentaruose');
+console.group('7. Perforkuokite butus formatu pateiktu komentaruose');
 /*
   Masyvas sudarytas iš
   {
