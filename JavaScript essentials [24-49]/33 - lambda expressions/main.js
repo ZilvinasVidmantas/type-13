@@ -61,12 +61,15 @@ const flats = [{
 console.group('1. Atspausdinkite kiekvieno buto adresą su miestu');
 // '<address>, <city>'
 {
+  flats.forEach(({ address, city }) => console.log(`${address}, ${city}`));
 }
 console.groupEnd();
 
 console.group('2. Sukurkite masyvą iš butų kamarių skaičiaus');
 // [4, 5, 3, 3, 3, 3]
 {
+  const flatsRoomsCount = flats.map(({ rooms }) => rooms.length);
+  console.log(flatsRoomsCount);
 }
 console.groupEnd();
 
@@ -147,3 +150,9 @@ console.group('10. Apskaičiuokite visų būtų kainą už kvadratą');
 console.groupEnd();
 
 
+const addresses = flats.map(({ address, city }) => ({
+  address,
+  city
+}));
+
+console.table(addresses);
