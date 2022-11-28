@@ -1,26 +1,18 @@
-const values = [-5, 5, 1, 4, 8, 7, 63, 14, 6, 5, 4, 9, 1, 2, 4, 5, 4, 6, 4];
-
-const valueCountDictionary = values.reduce((prevDictionary, x) => {
-  if (prevDictionary[x] === undefined) {
-    prevDictionary[x] = 0;
+const countValues = (array) => array.reduce((valueCountObj, x) => {
+  if (valueCountObj[x] === undefined) {
+    valueCountObj[x] = 0;
   }
-  prevDictionary[x] += 1;
+  valueCountObj[x] += 1;
 
-  return prevDictionary;
+  return valueCountObj;
 }, {});
 
-console.table(valueCountDictionary);
+const selectUniq = (array) => array.filter((x, i, arr) => arr.indexOf(x) === i);
 
-const uniqValues = values.filter((x, i, arr) => arr.indexOf(x) === i);
+const values = ['labas', 'vakaras', 'labas', 'rytas', 'labas', 'vakaras'];
+const valueCountObj = countValues(values);
+console.table(valueCountObj);
 
-console.log({ uniqValues });
-const uniqValuesCountDictionary = uniqValues.reduce((prevDictionary, x) => {
-  if (prevDictionary[x] === undefined) {
-    prevDictionary[x] = 0;
-  }
-  prevDictionary[x] += 1;
-
-  return prevDictionary;
-}, {});
-
-console.table(uniqValuesCountDictionary);
+const uniqValues = selectUniq(values);
+const uniqValueCountObj = countValues(uniqValues);
+console.table(uniqValueCountObj);
