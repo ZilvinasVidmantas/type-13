@@ -99,6 +99,7 @@ console.groupCollapsed('some');
     Array.prototype.some metodo esmė patikrinti ar nors vienas masyvo elementas tenkina argumentu perduotos funkcijos 'testą'
       Jei NORS VIENOS iteracijos metu funkcijos grąžinama reikšmė buvo 'truthy', tokiu atveju visas metodas grąžina 'true'
       Jei NEI VIENOS iteracijos metu funkcijos grąžinama reikšmė NEBUVO 'truthy', tokiu atveju visas metodas grąžina 'false'
+      salyga1 || salyga2 || salyga3 || salyga4 ....
   */
   const hasEvenNumbers = numbers.some(x => x % 2 === 0);
   const hasFloatingNumbers = numbers.some(x => x % 1 !== 0);
@@ -120,6 +121,7 @@ console.groupCollapsed('every');
     Array.prototype.every metodo esmė patikrinti visi masyvo elementai tenkina argumentu perduotos funkcijos 'testą'
       Jei KIEKVIENOS iteracijos metu funkcijos grąžinama reikšmė buvo 'truthy', tokiu atveju visas metodas grąžina 'true'
       Jei NORS VIENOS iteracijos metu funkcijos grąžinama reikšmė NEBUVO 'truthy', tokiu atveju visas metodas grąžina 'false'
+      salyga1 && salyga2 && salyga3 && salyga4 ....
   */
   const madeOfWholeNumbers = numbers.every(x => x % 1 === 0);
   const allPeopleHaveIncome = people.every(p => p.income > 0);
