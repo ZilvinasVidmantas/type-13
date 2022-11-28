@@ -93,21 +93,34 @@ console.groupEnd();
 console.group('4. Atrinkite 4 kambarių ir dedesnius butus');
 // [{...}, {...}]
 {
+  const bigFlats = flats.filter(({ rooms }) => rooms.length >= 4);
+  console.table(bigFlats);
 }
 console.groupEnd();
 
 console.group('5. Apskaičiuokite visų butų bendrą plotą');
 {
+  const totalArea = flats.reduce((totalSum, flat) => totalSum + flat.rooms
+    .reduce((flatSum, { area }) => flatSum + area, 0)
+    , 0);
+  console.log(totalArea);
+
 }
 console.groupEnd();
 
 console.group('6. Atrinkite 3 kambarių butus iš Kauno, kurių kaina mažesnė nei 100 000');
 {
+  const specificFlats = flats.filter(({ rooms, city, price }) =>
+    rooms.length === 3 &&
+    city === 'Kaunas' &&
+    price < 100000
+  );
 
+  console.log(specificFlats);
 }
 console.groupEnd();
 
-console.group('7. Perforkuokite butus formatu pateiktu komentaruose');
+console.group('7. Performuokite butus formatu pateiktu komentaruose');
 /*
   Masyvas sudarytas iš
   {
@@ -120,39 +133,101 @@ console.group('7. Perforkuokite butus formatu pateiktu komentaruose');
   }
 */
 {
+  const refactoredFlats = flats.map(({ address, city, price: oldPrice, rooms }) => {
+    const squares = rooms.reduce((sum, { area }) => sum + area, 0);
+    const price = oldPrice * 1.1;
 
+    return {
+      address: `${address}, city`,
+      city,
+      price,
+      roomCount: rooms.length,
+      squares,
+      squarePrice: price / squares,
+    };
+  });
+
+  console.table(refactoredFlats);
 }
 console.groupEnd();
 
 // Papildomai
 console.group('8. Atrinkite butus, kurie turi nors vieną kambarį, didesnį nei 19 kvadratų');
 {
+  {
+    const flatsWithBigRoom = flats.filter(({ rooms }) => rooms
+      .filter(({ area }) => area > 19).length > 0
+    );
 
+    console.log(flatsWithBigRoom);
+  }
+
+  {
+    const flatsWithBigRoom = flats.filter(({ rooms }) => rooms
+      .reduce((currentMaxArea, { area }) => area > currentMaxArea
+        ? area
+        : currentMaxArea,
+        0) > 19
+    );
+
+    console.log(flatsWithBigRoom);
+  }
+
+  {
+    const flatsWithBigRoom = flats.filter(({ rooms }) =>
+      Math.max(...rooms.map(({ area }) => area)) > 19
+    );
+
+    console.log(flatsWithBigRoom);
+  }
+
+  {
+    const flatsWithBigRoom = flats.filter(({ rooms }) =>
+      rooms.map(({ area }) => area).sort((a, b) => b - a)[0] > 19
+    );
+
+    console.log(flatsWithBigRoom);
+  }
+
+  {
+    const flatsWithBigRoom = flats.filter(({ rooms }) => rooms.find(({ area }) => area > 19));
+
+    console.log(flatsWithBigRoom);
+  }
+
+  {
+    const flatsWithBigRoom = flats.filter(({ rooms }) => rooms.findIndex(({ area }) => area > 19) !== -1);
+
+    console.log(flatsWithBigRoom);
+  }
 }
 console.groupEnd();
 
 console.group('9. Apskaičiuokite visų būtų kainos vidurkį,');
 {
-
+  const priceAvg = flats.reduce((sum, { price }) => sum + price, 0) / flats.length;
+  console.log(priceAvg);
 }
 console.groupEnd();
 
 console.group('10. Apskaičiuokite visų būtų kainą už kvadratą');
 // 20 - 20 000;           40 - 40 000; -> 60 000 / 60 -> 1000
 //  1000                     1000                     -> 1000
+
 // 20 - 20 000;           20 - 40 000;                -> 1500
 //  1000                     2000                     -> 1500 
+
 // 20 - 20 000;           30 - 60 000; -> 80 000/50   -> 1600 // butų kvadrato kaina
 //  1000                    2000                      -> 1500 // butų kvadartų kainų vidurkis
 {
+  //                                                     Prev Iteration Result       current element
+  const { totalPrice, totalSquares } = flats.reduce(({ totalPrice, totalSquares }, { price, rooms }) => ({
+    totalPrice: totalPrice + price,
+    totalSquares: totalSquares + rooms.reduce((sum, { area }) => sum + area, 0),
+  }), { totalPrice: 0, totalSquares: 0 });
 
+  const flatsSquarePriceAvg = totalPrice / totalSquares;
+
+  console.log(flatsSquarePriceAvg);
 }
 console.groupEnd();
-
-
-const addresses = flats.map(({ address, city }) => ({
-  address,
-  city
-}));
-
-console.table(addresses);

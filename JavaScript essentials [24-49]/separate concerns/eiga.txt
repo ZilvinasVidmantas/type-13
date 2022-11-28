@@ -11,12 +11,12 @@ sorting.js
 array-iterative-methods.js
 destructurization.js
 lamdba.js
+annonymousFunctions.js
 array-iterative-methods-2.js
 array-methods-methods-2.js
-annonymousFunctions.js
 higherOrderFunctions.js
-this.js
 classes.js
+this.js
 static.js
 oop-encapsulation.js
 oop-composition.js
