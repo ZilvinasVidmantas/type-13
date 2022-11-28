@@ -70,7 +70,7 @@ console.group('2. Patikrinkite, ar visi butai brangesni už 50 000');
 }
 console.groupEnd();
 
-console.group('3. Suraskite pirmą butą, kuris pigesnis už 55 000 ir atspausdinkite jį atspausdinkite');
+console.group('3. Suraskite pirmą butą, kuris pigesnis už 55 000 ir jį atspausdinkite');
 {
   // Array.prototype.find
 }
@@ -90,6 +90,6 @@ console.group('4. Suraskite pirmą butą, kuris pigesnis nei 90 000 ir po jo įt
   };
 
   // Array.prototype.findIndex
-  // Array.prototype.splice
+  // Array.prototype.splice(nuoKurioIndex, kiekIstrinti, ...iterpiamiElementai)
 }
 console.groupEnd();
