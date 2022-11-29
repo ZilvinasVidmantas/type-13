@@ -1,14 +1,14 @@
 console.group('1. Sukurkite funkciją, kuri priima spalvą ir grąžina funkciją, kuri spausdins tekstą išorinei funkcijai perduota spalva');
 {
   const createColorfulPrintingFunction = (color) => {
-    // ... grąžinti funkciją, kuri priimtų tekstą ir atspausdintų jį spalva <color>
+    return (text) => console.log(`%c${text}`, `color: ${color}`);
   }
 
   const printRed = createColorfulPrintingFunction('red');
   const printBlue = createColorfulPrintingFunction('blue');
 
-  // printRed('tekstas'); // konsolėje matosi: 'tekstas'  raudona spalva
-  // printBlue('tekstas'); // konsolėje matosi: 'tekstas' mėlyna spalva
+  printRed('tekstas'); // konsolėje matosi: 'tekstas'  raudona spalva
+  printBlue('tekstas'); // konsolėje matosi: 'tekstas' mėlyna spalva
 }
 console.groupEnd();
 
