@@ -210,7 +210,7 @@ console.group("13. Sukurkite funkciją, kuri grąžina priebalsių kiekį žodyj
 console.groupEnd();
 console.log();
 
-console.group("14. Sukurkite funkciją, kuri grąžina <true>, jeigu NĖRA skaičių");
+console.group("14. Sukurkite funkciją, kuri grąžina <true>, jeigu NĖRA skaitmenų");
 {
   function isOnlyLetters(str) {
     // ... code
@@ -261,7 +261,7 @@ console.log();
 
 console.group("17. Sukurkite funkciją, kuri grąžina pirmos (nuo kairės pusės) 'a' raidės vietą žodyje");
 {
-  function lastIndexOfLetterA(str) {
+  function indexOfLetterA(str) {
     // code ...
   }
   // console.log('---');
@@ -277,7 +277,7 @@ console.log();
 
 console.group("18. Sukurkite funkciją, kuri grąžina pirmos (nuo kairės pusės) vartotojo perduotos raidės vietą žodyje");
 {
-  function lastIndexOfLetter(str, searchLetter) {
+  function indexOfLetter(str, searchLetter) {
     // code ...
   }
   // console.log('---');

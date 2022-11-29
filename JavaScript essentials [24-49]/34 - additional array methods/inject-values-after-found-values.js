@@ -9,8 +9,7 @@ console.group('5. Sukurkite funkciją, kuri po kiekvieno dvejeto įdėtų 777');
     const array = [...arr];
 
     let indexOf2 = array.length;
-    while (true) {
-      if (indexOf2 === 0) break;
+    while (indexOf2 !== 0) {
       indexOf2 = array.lastIndexOf(5, indexOf2 - 1); // 0
       if (indexOf2 === -1) break;
       array.splice(indexOf2 + 1, 0, 777);
