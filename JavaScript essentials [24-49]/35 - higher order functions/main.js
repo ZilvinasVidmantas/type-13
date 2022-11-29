@@ -58,24 +58,27 @@ console.group('3. Sukurkite funkciją, kuri priima funkciją priimančią 2 para
   //   }
   // }
 
-  const convertToInvocationQueue = (binaryFunction) => {
-    // const functionArr = []
-    // Kaip padaryti, kad būtų grąžina funkcija išsikviečianti tiek kartų priimant po vieną parametrą, kiek <binaryFunction>  turi parametrų;
-
-    return function (a) {
-      return function (b) {
-        return binaryFunction(a, b);
+  const convertToInvocationQueue = (multiParamFn) => {
+    const args = [];
+    const saveArg = (arg) => {
+      if (args.length + 1 < multiParamFn.length) {
+        args.push(arg);
+        return saveArg;
       }
+      return multiParamFn(...args, arg);
     }
+
+    return saveArg;
   }
 
 
   const addQueue = convertToInvocationQueue(add);
   const multiplyQueue = convertToInvocationQueue(multiply);
+
+
   console.table({
-    'addQueue(7)(6)': addQueue(7)(6),
     'multiplyQueue(7)(6)': multiplyQueue(7)(6),
-    // 'addQueue(7)(6)(3)(2)': addQueue(7)(6)(3)(2),
+    'addQueue(7)(6)(3)(2)': addQueue(7)(6)(3)(2),
   });
 }
 console.groupEnd();
