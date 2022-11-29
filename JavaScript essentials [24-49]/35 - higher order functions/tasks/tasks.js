@@ -34,3 +34,26 @@ console.group('3. Sukurkite funkciją, kuri priima funkciją priimančią 2 para
   // console.log(multiplyUnaryQueue(7)(6)); // 42
 }
 console.groupEnd();
+
+console.group('4. Sukurkite funkciją kuri grąžina funkciją atspausdinančią tekstą apgaubus šauktukais');
+/*
+  const printWithBangs = createPrintWithBangs();
+  printWithBangs('tekstas') -> !tekstas!
+  printWithBangs('labas') -> !labas!
+*/
+{
+
+}
+console.groupEnd();
+
+console.group('5. Sukurkite funkciją kuri grąžina funkciją atspausdinančią tekstą apgaubus išorinės funkcijos parametru');
+/*
+  const printWithBangs = createPrintBetween('!');
+  const printWithDashes = createPrintBetween('---');
+  printWithBangs('tekstas') -> !tekstas!
+  printWithDashes('tekstas') -> ---labas---
+*/
+{
+
+}
+console.groupEnd();
