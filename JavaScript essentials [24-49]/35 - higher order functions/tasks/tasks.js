@@ -71,9 +71,9 @@ console.group('6. Sukurkite funkciją<A> kuri priima funkciją<B> ir parametrą<
     Čia turite grąžinti funkciją<C> 
   }
 
-  const bangsWrapper = createWrapper(double, '!')
-  bangsWrapper('labas') -> !labaslabas!
-  bangsWrapper(8) -> !16!
+  const doubleWithBangs = createWrapper(double, '!')
+  doubleWithBangs('labas') -> !labaslabas!
+  doubleWithBangs(8) -> !16!
 */
 {
 
