@@ -57,3 +57,25 @@ console.group('5. Sukurkite funkciją kuri grąžina funkciją atspausdinančią
 
 }
 console.groupEnd();
+
+// A, B, C, D - salygoje naudojami pavadinimai
+console.group('6. Sukurkite funkciją<A> kuri priima funkciją<B> ir parametrą<D>, ir grąžina funkciją<C>. \nFunkcija<B> tai vieną parametrą priimanti funkciją, kuri grąžina parametro transformaciją. \n Funkcija<C> turi grąžinti Funkcijos<B> rezultatą apgaubiant jį parametru<D>');
+/*
+  funkciją<B>:
+  const double = (a) => typeof a === 'number' ? a * 2 : a + a;
+
+  funkciją<A>:               ↙ funkciją<B>   
+  const createWrapper = (functionB, parameterD) => {
+                                        ↖ parametras<D>
+    
+    Čia turite grąžinti funkciją<C> 
+  }
+
+  const bangsWrapper = createWrapper(double, '!')
+  bangsWrapper('labas') -> !labaslabas!
+  bangsWrapper(8) -> !16!
+*/
+{
+
+}
+console.groupEnd();
