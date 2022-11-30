@@ -14,7 +14,7 @@ console.group('2. Naudodami statinę savybę kuriamiem Item objektams, kurkite u
 }
 console.groupEnd();
 
-console.group('3. Sukurkite statinę savybę - objektą <exchange>, kuriame būti aprašyti valiutų kursai "USD/EUR" ir "EUR/USD"');
+console.group('3. Sukurkite statinę savybę - <EUR_USD>, kuriame būtų EUR/USD santykio konstanta');
 {
 
 }
