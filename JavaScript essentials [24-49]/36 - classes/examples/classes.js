@@ -47,7 +47,7 @@
   const allCars = [myCar, friendCar, uncleCar];
 
   // console.table(allCars);
-  // allCars.forEach(car => car.accelerate(20));
+  allCars.forEach(car => car.accelerate(20));
   // console.table(allCars);
 
   // myCar.displayColor();
