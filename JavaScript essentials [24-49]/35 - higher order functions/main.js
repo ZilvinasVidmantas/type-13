@@ -47,6 +47,7 @@ console.group('3. Sukurkite funkciją, kuri priima funkciją priimančią 2 para
   // funkcija priimanti 2 parametrus
   const add = (a, b, c, d) => a + b + c + d;
   const multiply = (a, b) => a * b;
+  const doStuff = (a, b, c) => a * b + c;
 
   // const convertToInvocationQueue = (binaryFunction) =>  (a) => (b) => binaryFunction(a, b);
 
@@ -60,25 +61,24 @@ console.group('3. Sukurkite funkciją, kuri priima funkciją priimančią 2 para
 
   const convertToInvocationQueue = (multiParamFn) => {
     const args = [];
+
     const saveArg = (arg) => {
-      if (args.length + 1 < multiParamFn.length) {
-        args.push(arg);
-        return saveArg;
-      }
-      return multiParamFn(...args, arg);
+      args.push(arg);
+      if (args.length < multiParamFn.length) return saveArg;
+
+      return multiParamFn(...args);
     }
 
     return saveArg;
   }
 
-
   const addQueue = convertToInvocationQueue(add);
   const multiplyQueue = convertToInvocationQueue(multiply);
-
 
   console.table({
     'multiplyQueue(7)(6)': multiplyQueue(7)(6),
     'addQueue(7)(6)(3)(2)': addQueue(7)(6)(3)(2),
+    'doStuffQueue(7)(6)(3)': convertToInvocationQueue(doStuff)(7)(6)(3),
   });
 }
 console.groupEnd();
