@@ -1,4 +1,8 @@
 class House {
+  static clone(original) {
+    // Logika atliekanti kopijavima
+  }
+
   #address; // # - private
   #city;
   #owners;
@@ -27,8 +31,7 @@ class House {
   }
 
   get owners() {
-    // TODO: Atliekamos duomenų pasiekimo apsaugos...
-    return this.#owners;
+    return JSON.parse(JSON.stringify(this.#owners));
   }
 
   set address(value) {
@@ -70,7 +73,7 @@ const houses = [
   new House('Varkatkų g. 7', 'Klaipėda', [{ name: 'Faryja Mirgaitė' }]),
 ];
 
-console.group('1. HouseInstance.owners savybės inkapsuliacija');
+console.groupCollapsed('1. HouseInstance.owners savybės inkapsuliacija');
 {
   houses[0].owners = 5; // Bus iškvietas -> set owners(value) {...}
   houses[0].owners = [77, 65]; // Bus iškvietas -> set owners(value) {...}
