@@ -4,8 +4,8 @@ class House {
   #owners;
 
   constructor(address, city, owners) {
-    this.setAddress(address);
-    this.setCity(city);
+    this.address = address;
+    this.city = city;
     this.owners = owners; // Bus iškvietas -> set owners(value) {...}
   }
 
@@ -31,29 +31,29 @@ class House {
     return this.#owners;
   }
 
-  setAddress(address) {
-    if (typeof address !== 'string') {
-      console.error(`Klaida: House.setAddress argumentas privalo būti string'as.\n\tGauta: ${address}`);
+  set address(value) {
+    if (typeof value !== 'string') {
+      console.error(`Klaida: House.setAddress argumentas privalo būti string'as.\n\tGauta: ${value}`);
       return; // return; - nutraukia funkciją;
     }
 
-    this.#address = address;
+    this.#address = value;
   }
 
-  getAddress() {
+  get address() {
     return this.#address;
   }
 
-  setCity(city) {
-    if (typeof city !== 'string') {
-      console.error(`Klaida: House.setCity argumentas privalo būti string'as.\n\tGauta: ${city}`);
+  set city(value) {
+    if (typeof value !== 'string') {
+      console.error(`Klaida: House.setCity argumentas privalo būti string'as.\n\tGauta: ${value}`);
       return; // return; - nutraukia funkciją;
     }
 
-    this.#city = city;
+    this.#city = value;
   }
 
-  getCity() {
+  get city() {
     return this.#city;
   }
 
@@ -83,16 +83,16 @@ console.groupEnd();
 
 console.groupCollapsed('2. Perrašykite HouseInstance.address savybės inkapsuliaciją naudojant naują sintaksę');
 {
-  houses[0].setAddress(5);
-  houses[0].setAddress('Kupranugarių g. 18');
+  houses[0].address = 5;
+  houses[0].address = 'Kupranugarių g. 18';
   houses.forEach(house => house.printOwners());
 }
 console.groupEnd();
 
 console.groupCollapsed('3. Perrašykite HouseInstance.city savybės inkapsuliaciją naudojant naują sintaksę');
 {
-  houses[0].setCity(5);
-  houses[0].setCity('Kupranugarių g. 18');
+  houses[0].city = 5;
+  houses[0].city = 'Kupranugarių g. 18';
   houses.forEach(house => house.printOwners());
 }
 console.groupEnd();
