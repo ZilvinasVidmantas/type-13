@@ -81,7 +81,7 @@ console.group('1. HouseInstance.owners savybės inkapsuliacija');
 }
 console.groupEnd();
 
-console.groupCollapsed('2. HouseInstance.address savybės inkapsuliacija');
+console.groupCollapsed('2. Perrašykite HouseInstance.address savybės inkapsuliaciją naudojant naują sintaksę');
 {
   houses[0].setAddress(5);
   houses[0].setAddress('Kupranugarių g. 18');
@@ -89,7 +89,7 @@ console.groupCollapsed('2. HouseInstance.address savybės inkapsuliacija');
 }
 console.groupEnd();
 
-console.groupCollapsed('3. HouseInstance.city savybės inkapsuliacija');
+console.groupCollapsed('3. Perrašykite HouseInstance.city savybės inkapsuliaciją naudojant naują sintaksę');
 {
   houses[0].setCity(5);
   houses[0].setCity('Kupranugarių g. 18');
