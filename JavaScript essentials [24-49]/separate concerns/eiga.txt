@@ -16,7 +16,8 @@ array-iterative-methods-2.js
 array-methods-methods-2.js
 higherOrderFunctions.js
 classes.js
-this.js
 static.js
 oop-encapsulation.js
-oop-composition.js
+this.js
+oop-composition.js NERA
+oop-inheritance.js NERA
