@@ -45,8 +45,26 @@ const houses = [
   new House('Varkatkų g. 7', 'Klaipėda', [{ name: 'Faryja Mirgaitė' }]),
 ];
 
-// Tiesioginis klaidingas priskyrimas
+console.groupCollapsed('1. HouseInstance.owners savybės inkapsuliacija');
+{
+  houses[0].setOwners(5);
+  houses[0].setOwners([77, 65]);
+  houses[0].setOwners([{ name: 'Verslioras Eurikas' }, 7]);
+  houses[0].setOwners([{ name: 'Verslioras Eurikas' }, { name: 'Biznė Eurikienė' }]);
+  houses.forEach(house => house.printOwners());
+}
+console.groupEnd();
 
-houses[0].setOwners([{ name: 'Verslioras Eurikas' }, { name: 'Kepėja Eurikė' }])
+console.groupCollapsed('2. HouseInstance.address savybės inkapsuliacija');
+{
 
-houses.forEach(house => house.printOwners())
+  houses.forEach(house => house.printOwners());
+}
+console.groupEnd();
+
+console.groupCollapsed('3. HouseInstance.city savybės inkapsuliacija');
+{
+
+  houses.forEach(house => house.printOwners());
+}
+console.groupEnd();
