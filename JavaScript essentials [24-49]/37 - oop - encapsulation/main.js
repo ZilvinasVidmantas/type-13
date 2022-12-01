@@ -4,32 +4,57 @@ class House {
   #owners;
 
   constructor(address, city, owners) {
-    this.#address = address;
-    this.#city = city;
-    this.setOwners(owners);
+    this.setAddress(address);
+    this.setCity(city);
+    this.owners = owners; // Bus iškvietas -> set owners(value) {...}
   }
 
-  // Setter'ius ir Getter'ius
-  setOwners(owners) {
-    if (!(owners instanceof Array)) {
-      console.error(`Klaida: House.setOwners argumentas privalo būti masyvas.\n\tGauta: ${owners}`);
+  set owners(value) {
+    if (!(value instanceof Array)) {
+      console.error(`Klaida: House.setOwners argumentas privalo būti masyvas.\n\tGauta: ${value}`);
       return; // return; - nutraukia funkciją;
     }
-    if (!owners.every((owner) => owner instanceof Object)) {
-      console.error(`Klaida: House.setOwners masyvo visi elementai turi būti objektai.\n\tGauta: ${owners}`);
+    if (!value.every((owner) => owner instanceof Object)) {
+      console.error(`Klaida: House.setOwners masyvo visi elementai turi būti objektai.\n\tGauta: ${value}`);
       return; // return; - nutraukia funkciją;
     }
-    if (!owners.every((owner) => typeof owner.name === 'string')) {
-      console.error(`Klaida: House.setOwners masyvo visi elementai turi turėti savybę 'name' .\n\tGauta: ${owners}`);
+    if (!value.every((owner) => typeof owner.name === 'string')) {
+      console.error(`Klaida: House.setOwners masyvo visi elementai turi turėti savybę 'name' .\n\tGauta: ${value}`);
       return; // return; - nutraukia funkciją;
     }
 
-    this.#owners = owners;
+    this.#owners = value;
   }
 
-  getOwners() {
+  get owners() {
     // TODO: Atliekamos duomenų pasiekimo apsaugos...
     return this.#owners;
+  }
+
+  setAddress(address) {
+    if (typeof address !== 'string') {
+      console.error(`Klaida: House.setAddress argumentas privalo būti string'as.\n\tGauta: ${address}`);
+      return; // return; - nutraukia funkciją;
+    }
+
+    this.#address = address;
+  }
+
+  getAddress() {
+    return this.#address;
+  }
+
+  setCity(city) {
+    if (typeof city !== 'string') {
+      console.error(`Klaida: House.setCity argumentas privalo būti string'as.\n\tGauta: ${city}`);
+      return; // return; - nutraukia funkciją;
+    }
+
+    this.#city = city;
+  }
+
+  getCity() {
+    return this.#city;
   }
 
   printOwners() {
@@ -45,26 +70,29 @@ const houses = [
   new House('Varkatkų g. 7', 'Klaipėda', [{ name: 'Faryja Mirgaitė' }]),
 ];
 
-console.groupCollapsed('1. HouseInstance.owners savybės inkapsuliacija');
+console.group('1. HouseInstance.owners savybės inkapsuliacija');
 {
-  houses[0].setOwners(5);
-  houses[0].setOwners([77, 65]);
-  houses[0].setOwners([{ name: 'Verslioras Eurikas' }, 7]);
-  houses[0].setOwners([{ name: 'Verslioras Eurikas' }, { name: 'Biznė Eurikienė' }]);
+  houses[0].owners = 5; // Bus iškvietas -> set owners(value) {...}
+  houses[0].owners = [77, 65]; // Bus iškvietas -> set owners(value) {...}
+  houses[0].owners = [{ name: 'Verslioras Eurikas' }, 7]; // Bus iškvietas -> set owners(value) {...}
+  houses[0].owners = [{ name: 'Verslioras Eurikas' }, { name: 'Biznė Eurikienė' }]; // Bus iškvietas -> set owners(value) {...}
+  console.log(houses[0].owners); // Bus iškvietas -> get owners() {...}
   houses.forEach(house => house.printOwners());
 }
 console.groupEnd();
 
 console.groupCollapsed('2. HouseInstance.address savybės inkapsuliacija');
 {
-
+  houses[0].setAddress(5);
+  houses[0].setAddress('Kupranugarių g. 18');
   houses.forEach(house => house.printOwners());
 }
 console.groupEnd();
 
 console.groupCollapsed('3. HouseInstance.city savybės inkapsuliacija');
 {
-
+  houses[0].setCity(5);
+  houses[0].setCity('Kupranugarių g. 18');
   houses.forEach(house => house.printOwners());
 }
 console.groupEnd();
