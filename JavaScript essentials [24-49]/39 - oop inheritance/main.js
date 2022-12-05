@@ -2,15 +2,14 @@
 
 
 // Pavyzdžius pateikite čia
-
-console.group('0. Sukurkite klasę Page, kuri turėtų savybes: content ir number');
+console.group('0. Sukurkite klasę Page, kuri turėtų savybes: content');
 {
 
 }
 console.groupEnd();
 
 console.group('1. Sukurkite klasę Document, kuri turėtų savybes: title, dateCreated, author, pages, currentPage');
-// Kiekvienas puslapis turi būti Page klasės objektas susijęs su klase Document kompozicijos ryšiu. Document.pages -> Array<Page>
+// Kiekvienas puslapis turi būti Page klasės objektas susijęs su klase Document kompozicijos ryšiu. Document.pages -> Array<Page> [Page, Page, Page]
 // Konstruktoriaus metu sukurkite visus knygos duomenis.
 {
 
