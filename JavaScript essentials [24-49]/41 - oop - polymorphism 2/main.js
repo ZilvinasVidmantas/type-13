@@ -67,12 +67,27 @@ const datesOfSameMonth = (date1, date2) =>
   date1.getMonth() === date2.getMonth();
 // -------------------------------- Models ---------------------------------
 
-class WorkPerson {
+class Person {
+  name;
+  surname;
+
+  constructor({ name, surname }) {
+    this.name = name;
+    this.surname = surname;
+  }
+
+  get fullname() {
+    return this.name + ' ' + this.surname;
+  }
+}
+
+class WorkPerson extends Person {
   hourPay;
   fullTimeEquivalent;
   previousPayoutDates;
 
-  constructor(hourPay, fullTimeEquivalent) {
+  constructor({ hourPay, fullTimeEquivalent, ...personProps }) {
+    super(personProps);
     this.hourPay = hourPay;
     this.fullTimeEquivalent = fullTimeEquivalent;
     this.previousPayoutDates = [];
@@ -90,11 +105,12 @@ class WorkPerson {
   }
 }
 
-class SelfEmployedPerson {
+class SelfEmployedPerson extends Person {
   hourPay;
   hoursWorked;
 
-  constructor(hourPay) {
+  constructor({ hourPay, ...personProps }) {
+    super(personProps);
     this.hourPay = hourPay;
     this.hoursWorked = 0;
   }
@@ -128,11 +144,12 @@ class Job {
   }
 }
 
-class BuisnessLicencePerson {
+class BuisnessLicencePerson extends Person {
   jobs;
   payedJobs;
 
-  constructor(jobs) {
+  constructor({ jobs, ...personProps }) {
+    super(personProps);
     this.jobs = jobs ?? [];
     this.payedJobs = [];
   }
@@ -168,31 +185,75 @@ class BuisnessLicencePerson {
 // -------------------------------- Examples ---------------------------------
 
 const workers = [
-  new WorkPerson(10, 1),
-  new WorkPerson(10, 0.5),
-  new WorkPerson(15, 1),
-  new WorkPerson(6, 0.5),
+  new WorkPerson({
+    fullTimeEquivalent: 1,
+    name: 'Darbyla',
+    hourPay: 10,
+    surname: 'Magogas',
+  }),
+  new WorkPerson({
+    hourPay: 10,
+    fullTimeEquivalent: 0.5,
+    name: 'Fartina',
+    surname: 'Berakelnė',
+  }),
+  new WorkPerson({
+    hourPay: 15,
+    fullTimeEquivalent: 1,
+    name: 'Molopfas',
+    surname: 'Bandziuga',
+  }),
+  new WorkPerson({
+    hourPay: 6,
+    fullTimeEquivalent: 0.5,
+    name: 'Kengūra',
+    surname: 'Šoklytė',
+  }),
 ];
 
 const selfEmployedPeople = [
-  new SelfEmployedPerson(30), // 0
-  new SelfEmployedPerson(5),  // 1
-  new SelfEmployedPerson(12), // 2
+  new SelfEmployedPerson({
+    hourPay: 30,
+    name: 'Namisėda',
+    surname: 'Nolaiferis',
+  }), // 0
+  new SelfEmployedPerson({
+    hourPay: 5,
+    name: 'Lembargas',
+    surname: 'Kalniklis',
+  }),  // 1
+  new SelfEmployedPerson({
+    hourPay: 12,
+    name: 'Vaivėdra',
+    surname: 'Vėjautė',
+  }), // 2
 ];
 
 const buisnessLicencePeople = [
-  new BuisnessLicencePerson([
-    new Job('Sukurti mygtuką su 3 spalvų variacijomis', 60),
-    new Job('Sukurti šabloną su išskleidžiamu šoniniu meniu', 220),
-    new Job('Sukurti produktų parsiuntimo ir atvaizdavimo puslapį', 300),
-  ]),
-  new BuisnessLicencePerson(),
-  new BuisnessLicencePerson(),
-]
+  new BuisnessLicencePerson({
+    jobs: [
+      new Job('Sukurti mygtuką su 3 spalvų variacijomis', 60),
+      new Job('Sukurti šabloną su išskleidžiamu šoniniu meniu', 220),
+      new Job('Sukurti produktų parsiuntimo ir atvaizdavimo puslapį', 300),
+    ],
+    name: 'Sankirta',
+    surname: 'Trispalvytė',
+  }),
+  new BuisnessLicencePerson({
+    name: 'Mauricijus',
+    surname: 'Mandėla',
+  }),
+  new BuisnessLicencePerson({
+    name: 'Šokliava',
+    surname: 'Durpynytė',
+  }),
+];
+
+const people = [...workers, ...selfEmployedPeople, ...buisnessLicencePeople];
 
 console.group('WorkPerson atlyginimai');
 {
-  workers.forEach(w => console.log(w.calcPay()));
+  // workers.forEach(w => console.log(w.calcPay()));
 }
 console.groupEnd();
 
@@ -209,7 +270,7 @@ console.group('SelfEmployedPerson atlyginimai');
   selfEmployedPeople[2].logHours(10);
   selfEmployedPeople[2].logHours(20);
 
-  selfEmployedPeople.forEach(w => console.log(w.calcPay()));
+  // selfEmployedPeople.forEach(w => console.log(w.calcPay()));
 }
 console.groupEnd();
 
@@ -223,6 +284,22 @@ console.group('BuisnessLicencePerson atlyginimai');
   buisnessLicencePeople[1].assignJob(new Job('Retušuoti sliderio nuotraukas', 200));
   buisnessLicencePeople[1].assignJob(new Job('Sukurti žaismingą spalvinė gama About puslapiui', 200));
 
-  buisnessLicencePeople.forEach(w => console.log(w.calcPay()));
+  // buisnessLicencePeople.forEach(w => console.log(w.calcPay()));
 }
 console.groupEnd();
+
+console.group('Polimorfizmo pavyzdys');
+{
+  const people = [...workers, ...selfEmployedPeople, ...buisnessLicencePeople];
+  console.table(people);
+  //                Vienoda išvaizda - skirtingas veikimas
+  const pays = people.map(p => p.calcPay()); // Array<number>;
+  console.log(pays);
+}
+console.groupEnd()
+
+console.group('Paveldimumo pavyzdys');
+{
+  people.forEach(p => console.log(p.fullname));
+}
+console.groupEnd()
