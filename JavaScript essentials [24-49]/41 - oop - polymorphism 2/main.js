@@ -39,6 +39,7 @@ Turime 3 darbuotojų tipus:
 // const people = [...];
 // const pays = people.map(p => p.calcPay); // Array<number>;
 
+// -------------------------------- Helper Functions ---------------------------------
 const calcMonthDaysCount = (date = new Date()) => {
   const lastMonthDayDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
   const daysCount = lastMonthDayDate.getDate();
@@ -61,20 +62,56 @@ const calcMonthWorkDays = (date = new Date()) => {
   return workDays;
 }
 
+const datesOfSameMonth = (date1, date2) =>
+  date1.getFullYear() === date2.getFullYear() &&
+  date1.getMonth() === date2.getMonth();
+// -------------------------------- Models ---------------------------------
+
 class WorkPerson {
   hourPay;
   fullTimeEquivalent;
+  previousPayoutDates;
 
   constructor(hourPay, fullTimeEquivalent) {
     this.hourPay = hourPay;
     this.fullTimeEquivalent = fullTimeEquivalent;
+    this.previousPayoutDates = [];
   }
 
   calcPay() {
-    const monthDays = calcMonthWorkDays();
+    const now = new Date();
+    const alreadyPayedOut = this.previousPayoutDates.some(date => datesOfSameMonth(now, date));
+    if (alreadyPayedOut) return 0;
+
+    const monthDays = calcMonthWorkDays(now);
+    this.previousPayoutDates.push(now);
+
     return monthDays * this.hourPay * this.fullTimeEquivalent * 8;
   }
 }
+
+class SelfEmployedPerson {
+  hourPay;
+  hoursWorked;
+
+  constructor(hourPay) {
+    this.hourPay = hourPay;
+    this.hoursWorked = 0;
+  }
+
+  logHours(hours) {
+    this.hoursWorked += hours;
+  }
+
+  calcPay() {
+    const pay = this.hoursWorked * this.hourPay;
+    this.hoursWorked = 0;
+
+    return pay;
+  }
+}
+
+// -------------------------------- Examples ---------------------------------
 
 const workers = [
   new WorkPerson(10, 1),
@@ -83,4 +120,32 @@ const workers = [
   new WorkPerson(6, 0.5),
 ];
 
-workers.forEach(w => console.log(w.calcPay()));
+const selfEmployedPeople = [
+  new SelfEmployedPerson(30),
+  new SelfEmployedPerson(5),
+  new SelfEmployedPerson(12),
+];
+
+console.group('WorkPerson atlyginimai');
+{
+  workers.forEach(w => console.log(w.calcPay()));
+}
+console.groupEnd();
+
+
+console.group('SelfEmployedPerson atlyginimai');
+{
+
+  selfEmployedPeople[0].logHours(180);
+  selfEmployedPeople[0].logHours(40);
+
+  selfEmployedPeople[1].logHours(30);
+
+  selfEmployedPeople[2].logHours(30);
+  selfEmployedPeople[2].logHours(10);
+  selfEmployedPeople[2].logHours(10);
+  selfEmployedPeople[2].logHours(20);
+
+  selfEmployedPeople.forEach(w => console.log(w.calcPay()))
+}
+console.groupEnd();
