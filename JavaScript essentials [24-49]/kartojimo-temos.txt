@@ -1,0 +1,5 @@
+funkcijų skirtingi užrašymai su priežastim.
+Array.forEach, 
+Array.reduce - variacijos - MDN pavyzdžius
+setter, getter - panaudojimas senos sintaksės ir naujos sintaksės
+populiarūs String.prototype metodai

@@ -171,6 +171,12 @@ console.groupEnd();
 
 console.group('10. Panaudokite pradinį Car objektų masyvą performuoti duomenis į tokių objektų masyvą:');
 {
+  /*
+    * brand,
+    * model,
+    * price, // kaina doleriais [Number]
+    * fuelType // kuro tipas kaip string'as. galite naudoti 3 punktu sukurtą metodą
+  */
   const formattedCars = cars.map((car) => ({
     brand: car.brand,
     model: car.model,
