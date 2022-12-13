@@ -1,0 +1,8 @@
+Išnagrinėti:
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#grouping_objects_by_a_property
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#concatenating_arrays_contained_in_an_array_of_objects_using_the_spread_syntax_and_initialvalue
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#remove_duplicate_items_in_an_array
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#replace_.filter.map_with_.reduce
+
+Papildomai:
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#function_composition_enabling_piping
