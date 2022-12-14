@@ -1,0 +1,3 @@
+populiarūs String.prototype metodai
+OOP - kompozicija
+destrūkturizacija

@@ -1,2 +1,0 @@
-Array.reduce - variacijos - MDN pavyzdžius
-populiarūs String.prototype metodai

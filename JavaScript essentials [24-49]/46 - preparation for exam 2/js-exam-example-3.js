@@ -88,7 +88,7 @@ const tvsData = [{
   }
 }];
 
-console.group('1. Sukurkite klasę <TV>, kuri turėtų savybes pagal <peopleData> duomenis objektų ir jas priskirkite');
+console.group('1. Sukurkite klasę <TV>, kuri turėtų savybes pagal <tvsData> duomenis objektų ir jas priskirkite');
 {
 }
 console.groupEnd();
@@ -136,6 +136,13 @@ console.groupEnd();
 
 console.group('9. Sugrupuokite televizorius pagal markę.');
 {
+  /*
+  {
+    amazon: [TV, TV],
+    samsung: [TV, TV, TV],
+    tcl: [TV, TV, TV],
+  }
+  */
 }
 console.groupEnd();
 
