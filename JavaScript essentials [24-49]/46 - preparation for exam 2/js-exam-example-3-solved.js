@@ -118,10 +118,63 @@ class TV {
   }
 
   get featuresList() {
+    /*
+    --- Duota ---
+      this.features:
+      {
+        wifi: true,
+        youtube: false,
+        netflix: true,
+        chromeCast: true,
+      }
+      --- sprendimas ---
+      1. Object.entries(this.features):
+        [
+          ['wifi',  true],
+          ['youtube',  false],
+          ['netflix',  true],
+          ['chromeCast',  true],
+        ];
+
+      2. [1].filter(([_, isAvailable]) => isAvailable)
+        [
+          ['wifi',  true],
+          ['netflix',  true],
+          ['chromeCast',  true],
+        ];
+
+      3. [2].map(([feature]) => feature)
+        [
+          'wifi',
+          'netflix',
+          'chromeCast',
+        ];
+
+      4. [3].join(', ');
+        'wifi, netflix, chromeCast'
+
+      --- Rasti ---
+      'wifi, netflix, chromeCast'
+    */
     return Object.entries(this.features)
       .filter(([_, isAvailable]) => isAvailable)
       .map(([feature]) => feature)
       .join(', ');
+
+    return Object.entries(this.features)
+      .reduce((prevFeatures, [feature, isAvailable]) => {
+        if (isAvailable) prevFeatures.push(feature);
+        return prevFeatures;
+      }, [])
+      .join(', ');
+
+    const availableFeatures = [];
+    for (const feature in this.features) {
+      const isAvailable = this.features[feature];
+      if (isAvailable) availableFeatures.push(feature);
+    }
+
+    return availableFeatures.join(', ');
   }
 }
 
@@ -160,7 +213,7 @@ console.group('4. Sukurkite get\'erį <sizeInCM> kuris grąžintų televizoriaus
 }
 console.groupEnd();
 
-console.group('5. Sukurkite get\'erį <featuresList> atspausdintų visas televizoriaus galimybes(features) atskirtas ", ". Jeigu <features> objekto savybė yra false, ji neturi būti spausdinama.');
+console.group('5. Sukurkite get\'erį <featuresList> kuris atspausdintų visas televizoriaus galimybes(features) atskirtas ", ". Jeigu <features> objekto savybė yra false, ji neturi būti spausdinama.');
 {
   tvs.forEach(tv => console.log(tv.featuresList));
 }
@@ -201,10 +254,38 @@ console.group('9. Sugrupuokite televizorius pagal markę.');
   }
   */
   const tvsGroups = tvs.reduce((prevGroups, tv) => {
+    /*
+      prevGroups:
+        1: { }
+        2: { samsung: [TV] }
+        3: { samsung: [TV, TV] }
+        4: { samsung: [TV, TV, TV] }
+    */
+    // 1: groupKey = 'samsung';
+    // 2: groupKey = 'samsung';
+    // 3: groupKey = 'samsung';
+    // 4: groupKey = 'amazon';
     const groupKey = tv.brand.toLowerCase();
+    // 1: undefined === undefined ->>> true
+    // 2: [TV] === undefined ->>> false
+    // 3: [TV, TV] === undefined ->>> false
+    // 4: undefined === undefined ->>> true
     if (prevGroups[groupKey] === undefined) {
+      /* 
+        1: { samsung: []}
+        4: { ..., amazon: []}
+      */
       prevGroups[groupKey] = [];
     }
+    /* 
+      1: { samsung: [TV] }
+      2: { samsung: [TV, TV] }
+      3: { samsung: [TV, TV, TV] }
+      4: { 
+        samsung: [TV, TV, TV],
+        amazon: [TV],
+      }
+    */
     prevGroups[groupKey].push(tv);
 
     return prevGroups;

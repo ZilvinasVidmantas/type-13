@@ -114,7 +114,7 @@ console.group('4. Sukurkite get\'erį <sizeInCM> kuris grąžintų televizoriaus
 }
 console.groupEnd();
 
-console.group('5. Sukurkite get\'erį <featuresList> atspausdintų visas televizoriaus galimybes(features) atskirtas ", ". Jeigu <features> objekto savybė yra false, ji neturi būti spausdinama.');
+console.group('5. Sukurkite get\'erį <featuresList> kuris atspausdintų visas televizoriaus galimybes(features) atskirtas ", ". Jeigu <features> objekto savybė yra false, ji neturi būti spausdinama.');
 {
 }
 console.groupEnd();
