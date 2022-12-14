@@ -193,6 +193,13 @@ console.groupEnd();
 
 console.group('9. Sugrupuokite televizorius pagal markę.');
 {
+  /*
+  {
+    amazon: [TV, TV],
+    samsung: [TV, TV, TV],
+    tcl: [TV, TV, TV],
+  }
+  */
   const tvsGroups = tvs.reduce((prevGroups, tv) => {
     const groupKey = tv.brand.toLowerCase();
     if (prevGroups[groupKey] === undefined) {
