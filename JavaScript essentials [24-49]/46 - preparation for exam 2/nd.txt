@@ -1,0 +1,9 @@
+Pabaigti spręsti ir išnagrinėti:
+  * js-exam-example-3.js
+  * js-exam-example-4.js
+
+Pasidomėti temomis, pasiruošti kartojimui:
+  * populiarūs String.prototype metodai
+  * OOP - kompozicija
+  * destrūkturizacija
+  
