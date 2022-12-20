@@ -1,0 +1,14 @@
+Atlikti cao.lt
+  * Pamoka 6:
+    * Teorija - kaip forma veikia? -> Įžanginiai Pratimai
+    * Laikas praktikai - pratimai su forma
+      * 1
+      * 2
+
+Kiekvieną užduotį atlikti naujame HTML faile su jam atskiru JavaScript failu
+Veiksmų logika atliekama js/api.js modulyje
+
+Veiksmų seka turi būti pagal pavyzdį "login-form/main.js"
+
+Pasiruošimas rytojui:
+https://www.youtube.com/watch?v=QO4NXhWo_NM&list=PLRqwX-V7Uu6bKLPQvPRNNE65kBL62mVfx&ab_channel=TheCodingTrain

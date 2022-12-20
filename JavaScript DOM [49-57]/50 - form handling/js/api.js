@@ -22,6 +22,7 @@ const mockDB = {
   }]
 }
 
+// Application programming interface
 const API = {
   login: async ({ email, password }) => {
     // Laukiama 400ms
@@ -46,5 +47,21 @@ const API = {
     const { password: _, ...user } = foundUser;
 
     return user;
+  },
+
+  metodoPavadinimas: async (/* parametrai kurie reikalingi atlikti logikai*/) => {
+
+    // Dirbtinis uždelsimas imituojant informacijos siuntimą HTTP protokolu 400ms
+    await pause(400);
+
+    // Jūsų logika
+
+    // Grąžinate rezultatus užklausos siuntėjui.
+
+    if (true /*salyga x*/) {
+      return 'rezultatas 1';
+    }
+
+    return 'rezultatas 2';
   }
 }
