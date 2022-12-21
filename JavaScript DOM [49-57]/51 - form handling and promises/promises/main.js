@@ -55,5 +55,5 @@ fetchTodos();
   } catch (error) {
     displayError(error);
   }
-})()
+})();
 

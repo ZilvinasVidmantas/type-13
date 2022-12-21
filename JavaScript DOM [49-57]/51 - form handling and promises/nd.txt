@@ -1,0 +1,5 @@
+Parsisiųsti: https://nodejs.org/en/
+Naudojant "kaip-atlikti-formų-užduotis.txt" instrukciją perdaryti užduotis iš cao.lt:
+  * 6 pamoka
+  * 7 pamoka
+  * 8 pamoka
