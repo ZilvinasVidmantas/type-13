@@ -1,6 +1,6 @@
 const tableContainer = document.querySelector('.js-table-container');
 
-const transformFromJSON = (res) => res.json();
+const fromJson = (res) => res.json();
 
 const displayTodosTable = (todos) => {
   tableContainer.innerHTML = `
@@ -26,12 +26,34 @@ const displayTodosTable = (todos) => {
   </table>`;
 }
 
-const displayErrors = (error) => {
-  console.error(error)
-}
+const displayError = (error) => console.error(error);
 
+// Old Scholl
 fetch('https://jsonplaceholder.typicode.com/todos')
-  .then(transformFromJSON)
+  .then(fromJson)
   .then(displayTodosTable)
-  .catch(displayErrors);
+  .catch(displayError);
+
+// Async Function declaration + invocation
+const fetchTodos = async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const todos = await fromJson(response);
+    displayTodosTable(todos);
+  } catch (error) {
+    displayError(error);
+  }
+}
+fetchTodos();
+
+// IIFE - Immeditaly invoked function expression
+(async () => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const todos = await fromJson(response);
+    displayTodosTable(todos);
+  } catch (error) {
+    displayError(error);
+  }
+})()
 
