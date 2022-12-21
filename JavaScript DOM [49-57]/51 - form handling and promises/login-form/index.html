@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50 - login form</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+    crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="main.css">
+  <script src="../js/api.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <div
+    class="js-container-alert-login position-fixed d-flex justify-content-center start-0 end-0 mt-4 d-none">
+    <div class="js-alert-login alert" role="alert">
+      <span class="js-text-alert-login"></span>
+      <button type="button" class="btn-close"></button>
+    </div>
+  </div>
+
+  
+  <div class="vw-100 vh-100 center-children">
+    <!-- GET užklausa adresu, kuris šiuo metu yra naršyklės URL -->
+    <form class="js-form-login card shadow p-3 width-400px">
+      <h1 class="text-center mb-4">Login</h1>
+      <h2 class="js-result"></h1>
+      <div class="mb-3">
+        <label for="email-input" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email-input" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="password-input" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password-input" name="password">
+      </div>
+      <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+  </div>
+</body>
+
+</html>
