@@ -19,12 +19,13 @@ const mockDB = {
     surname: 'Kėglys',
     email: 'user3@gmail.com',
     password: 'Vilnius123'
-  }]
-}
+  }],
+  ticketBasePrice: 6,
+};
 
 // Application programming interface
 const API = {
-  login: async ({ email, password }) => {
+  async login({ email, password }) {
     // Laukiama 400ms
     await pause(400);
 
@@ -49,7 +50,16 @@ const API = {
     return user;
   },
 
-  metodoPavadinimas: async (/* parametrai kurie reikalingi atlikti logikai*/) => {
+  async getPriceByAge(age) {
+    await pause(200);
+    // TODO: atliekama validacija
+
+    if (age < 16) return mockDB.ticketBasePrice * 0.5;
+    if (age >= 60) return mockDB.ticketBasePrice / 3;
+    return mockDB.ticketBasePrice;
+  },
+
+  async metodoPavadinimas(/* parametrai kurie reikalingi atlikti logikai*/) {
 
     // Dirbtinis uždelsimas imituojant informacijos siuntimą HTTP protokolu 400ms
     await pause(400);
