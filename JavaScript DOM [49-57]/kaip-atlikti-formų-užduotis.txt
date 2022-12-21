@@ -1,0 +1,29 @@
+1. Turinio kūrimas.
+  1. Susikurti formos vaizdą
+  2. Susikurti klaidos vaizdą (ir jį paslėpti)
+  3. Susikurti rezultato vaizdą (ir jį paslėpti)
+
+2. JavaScript kodo rašymas
+  1. Susirandame ir pasideklaruojame visus kintamuosius, kurių turinys/atvaizdavimas keisis
+    1. Pasitikriname konsolėje, ar jie visi rasti
+  2. Sukuriame įvykių klausiklius (eventListeners) su nurodytomis funkcijomis reikiamiems elementams
+  3. Apsirašome reikiama kodo eigą, pvz. formos apdorojimo atveju:
+    1. Formos užklausos sustabdymas (event.preventDefault)
+    2. Duomenų formavimas
+    3. Duomenų pasirinkimas
+    4. Duomenų validavimas
+    5. Veiksmų pagal validacijos rezultatą vykdymas
+      1. Sėkmės Atveju:
+        1. Užklausos siuntimas į serverį ir verslo logikos atlikimas, bei abdorojimas.
+        2. Klaidų paslėpimas
+        3. Rezultatų pateikimas
+      2. Nesekmės Atveju:
+        1. Klaidų rodymas
+        2. Rezultato paslėpimas
+
+Patarimai:
+  * Po kiekvieno punkto tikrinti rezultatus.
+  * Kodas, tarsi sodas, kurį nuolat reikia laistyti ir genėti. 
+    * keisti kintamųjų pavadinimus
+    * keisti funkcijų pavadinimus
+    * konstruktų eiliškumą 
