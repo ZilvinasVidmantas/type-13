@@ -9,6 +9,6 @@ const API = {
       return error;
     }
   }
-}
+};
 
 export default API;
