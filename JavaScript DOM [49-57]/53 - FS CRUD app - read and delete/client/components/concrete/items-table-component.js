@@ -22,7 +22,7 @@ class ItemsTableComponent {
     tbody.append(...rowsHtmlElements);
   }
 
-  createRowHtmlElement({ id, title, done }) {
+  createRowHtmlElement = ({ id, title, done }) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${id}</td>
@@ -32,8 +32,22 @@ class ItemsTableComponent {
         <button class="btn btn-danger btn-sm">✕</button>
       </td>`;
 
+    const handleDeleteItem = async () => {
+      try {
+        await API.deleteItem({ id, title });
+      } catch (error) {
+        alert(error)
+      } finally {
+        const items = await API.getItems();
+        const tbody = this.htmlElement.querySelector('tbody');
+        const rowsHtmlElements = items.map(this.createRowHtmlElement);
+        tbody.innerHTML = null;
+        tbody.append(...rowsHtmlElements);
+      }
+    }
+
     const delButton = tr.querySelector('.btn-danger');
-    delButton.addEventListener('click', () =>  API.deleteItem(id));
+    delButton.addEventListener('click', handleDeleteItem);
 
     return tr;
   }

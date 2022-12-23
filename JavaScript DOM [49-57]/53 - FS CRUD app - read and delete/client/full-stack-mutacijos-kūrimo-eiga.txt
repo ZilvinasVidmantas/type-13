@@ -1,6 +1,6 @@
 Client-side(FE):
-  1. Sukuriame vartotojo sasają atlikti veiksmui (Mygtukas, Dropdown'as ir t.t...) +
-  2. Reaguojame į paspaudimą ir surenkame duomenis reikalingus siųsti užklausai 
+  1. Sukuriame vartotojo sasają  - atlikti veiksmui (Mygtukas, Dropdown'as ir t.t...) +
+  2. Reaguojame į vartotojo veiksmą ir surenkame duomenis reikalingus siųsti užklausai 
   3. Siunčiame užklausa su suformuotais duomenimis
 
 Server-side(BE):
@@ -11,9 +11,9 @@ Server-side(BE):
     2. Įvyko klaida - Siunčiame Client-side(FE) klaidos žinutę
 
 Client-side(FE):
-  4. Sulaukės atsakymo:
+  4. Sulaukiame atsakymo:
     1. Gautas teigiamas atsakymas: 
       * Per naujo parsiunčia visus duomenis, susijusius su pakeitimu:
-      * Per naujo atvaizduoja pakeistų įtakotus duomenis, kurie šiuo metu matomi vaizde
+      * Per naujo atvaizduojame mutacijos įtakotus duomenis, kurie šiuo metu matomi vartotojui
     2. Gautas neigiamas atsakymas:
       * Atvaizduojame klaidą
