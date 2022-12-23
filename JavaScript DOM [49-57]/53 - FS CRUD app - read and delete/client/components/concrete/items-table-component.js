@@ -1,7 +1,7 @@
 class ItemsTableComponent {
   htmlElement;
 
-  constructor(items) {
+  constructor({ items }) {
     this.htmlElement = document.createElement('table');
     this.htmlElement.className = 'table table-striped shadow-sm';
     this.htmlElement.innerHTML = `
