@@ -1,0 +1,6 @@
+1. Pakopijuojame serverio failus (apart node_modules) ir pasileidžiame serveryje
+2. Susikuriame aplanką client:
+  1. susikuriame index.html su šakniniu elementu, į kurį dėsime visą JS sugeneruotą kodą
+  2. sukuriame ir į index.html įtraukiame main.js faila kaip MODULĮ, tam kad galėtume importuoti kitus failus
+  3. Sukuriame API integraciją atskirame faile ir parsisiunčiame duomenis (pasitikriname rezultatus main.js)
+  4. Po vieną kuriame komponentus ir juos apjungiame, pasitikrinant kiekvieno atskirą veikimą ir tik po to  struktūrinį apjungimą (Header ir Table įdedamas į Container)
