@@ -8,6 +8,10 @@ const API = {
     } catch (error) {
       return error;
     }
+  },
+
+  async deleteItem(id) {
+    console.log(`siunčiame užklausa ištrinti elementą su id: "${id}"`);
   }
 };
 
