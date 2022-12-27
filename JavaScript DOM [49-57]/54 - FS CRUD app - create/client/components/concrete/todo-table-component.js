@@ -1,9 +1,10 @@
-import API from "../../api.js";
-
 class TodoTableComponent {
   htmlElement;
+  tbodyHtmlElement;
 
-  constructor({ items }) {
+  onDeleteTodo;
+
+  constructor({ todos, onDeleteTodo }) {
     this.htmlElement = document.createElement('table');
     this.htmlElement.className = 'table table-striped shadow';
     this.htmlElement.innerHTML = `
@@ -16,10 +17,9 @@ class TodoTableComponent {
       </tr>
     </thead>
     <tbody></tbody>`;
-
-    const tbody = this.htmlElement.querySelector('tbody');
-    const rowsHtmlElements = items.map(this.createRowHtmlElement);
-    tbody.append(...rowsHtmlElements);
+    this.onDeleteTodo = onDeleteTodo;
+    this.tbodyHtmlElement = this.htmlElement.querySelector('tbody');
+    this.renderTodos(todos);
   }
 
   createRowHtmlElement = ({ id, title, done }) => {
@@ -32,26 +32,17 @@ class TodoTableComponent {
         <button class="btn btn-danger btn-sm">✕</button>
       </td>`;
 
-    const handleDeleteItem = async () => {
-      try {
-        await API.deleteTodo({ id, title });
-      } catch (error) {
-        alert(error)
-      } finally {
-        const items = await API.getTodos();
-        const tbody = this.htmlElement.querySelector('tbody');
-        const rowsHtmlElements = items.map(this.createRowHtmlElement);
-        tbody.innerHTML = null;
-        tbody.append(...rowsHtmlElements);
-      }
-    }
-
     const delButton = tr.querySelector('.btn-danger');
-    delButton.addEventListener('click', handleDeleteItem);
+    delButton.addEventListener('click', () => this.onDeleteTodo({ id, title }));
 
     return tr;
   }
 
+  renderTodos = (todos) => {
+    this.tbodyHtmlElement.innerHTML = null;
+    const rowsHtmlElements = todos.map(this.createRowHtmlElement);
+    this.tbodyHtmlElement.append(...rowsHtmlElements);
+  }
 }
 
 export default TodoTableComponent;

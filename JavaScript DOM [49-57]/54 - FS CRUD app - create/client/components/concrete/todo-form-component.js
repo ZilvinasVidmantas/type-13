@@ -1,9 +1,8 @@
-import API from "../../api.js";
-
 class TodoFormComponent {
   htmlElement;
 
-  constructor() {
+  //      Inversion of control  
+  constructor({ onSubmit }) {
     this.htmlElement = document.createElement('form');
     this.htmlElement.className = 'todo-form shadow p-4'
     this.htmlElement.innerHTML = `
@@ -26,18 +25,14 @@ class TodoFormComponent {
       const title = formData.get('title');
       const done = formData.get('done') === 'on';
 
-      // Validacija
+      // TODO: Validacija
 
 
-      // Validacija sekminga
-      await API.createTodo({ title, done })
+      // TODO: Validacija sekminga
+      onSubmit({ title, done });
+      event.target.reset();
 
-
-      // validacija nesekminga
-
-
-      console.log(dataForTodoCreation)
-
+      // TODO: validacija nesekminga
 
     });
   }

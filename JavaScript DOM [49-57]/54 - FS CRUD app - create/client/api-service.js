@@ -5,7 +5,7 @@ const formatError = (error) => {
 
 // TODO: sukurti suvienodintą header'ių siuntimą;
 
-const API = {
+const ApiService = {
   async getTodos() {
     try {
       const response = await fetch('http://localhost:5000/items');
@@ -43,10 +43,15 @@ const API = {
         },
         body: JSON.stringify(todoData),
       });
+
+      if (response.status === 404) {
+        throw new Error(`Failed to Create new Todo`)
+      }
+
     } catch (error) {
       throw formatError(error);
     }
   }
 };
 
-export default API;
+export default ApiService;
