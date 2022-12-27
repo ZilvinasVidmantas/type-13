@@ -1,7 +1,8 @@
 import API from './api.js';
-import ItemsTableComponent from './components/concrete/items-table-component.js';
+import TodoTableComponent from './components/concrete/todo-table-component.js';
 import ContainerComponent from './components/wrappers/container-component.js';
 import HeaderComponent from './components/concrete/header-component.js';
+import TodoFormComponent from './components/concrete/todo-form-component.js';
 
 const rootHtmlElement = document.querySelector('#root');
 
@@ -9,16 +10,18 @@ if (rootHtmlElement === null) throw new Error('Error: #root element  was not fou
 
 API.getItems()
   .then((items) => {
-    const itemsTableComponent = new ItemsTableComponent({ items });
+    const todoTableComponent = new TodoTableComponent({ items });
     const headerComponent = new HeaderComponent({
       text: 'Task list',
       className: 'text-center my-4 fw-normal',
     });
+    const todoFormComponent = new TodoFormComponent();
 
     const container = new ContainerComponent({
       children: [
         headerComponent.htmlElement,
-        itemsTableComponent.htmlElement,
+        todoTableComponent.htmlElement,
+        todoFormComponent.htmlElement,
       ],
     });
 
