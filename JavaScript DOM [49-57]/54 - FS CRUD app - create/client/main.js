@@ -11,8 +11,8 @@ API.getItems()
   .then((items) => {
     const itemsTableComponent = new ItemsTableComponent({ items });
     const headerComponent = new HeaderComponent({
-      text: 'Darbų sąrašas',
-      className: 'text-center my-4',
+      text: 'Task list',
+      className: 'text-center my-4 fw-normal',
     });
 
     const container = new ContainerComponent({

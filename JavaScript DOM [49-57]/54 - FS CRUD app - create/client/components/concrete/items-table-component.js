@@ -5,7 +5,7 @@ class ItemsTableComponent {
 
   constructor({ items }) {
     this.htmlElement = document.createElement('table');
-    this.htmlElement.className = 'table table-striped shadow-sm';
+    this.htmlElement.className = 'table table-striped shadow';
     this.htmlElement.innerHTML = `
     <thead class="bg-dark text-white">
       <tr>

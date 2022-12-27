@@ -3,7 +3,6 @@ const formatError = (error) => {
   return error.message;
 }
 
-
 const API = {
   async getItems() {
     try {
@@ -16,7 +15,7 @@ const API = {
     }
   },
 
-  async deleteItem({ id, title}) {
+  async deleteItem({ id, title }) {
     try {
       const response = await fetch(`http://localhost:5000/items/${id}`, {
         method: 'DELETE',

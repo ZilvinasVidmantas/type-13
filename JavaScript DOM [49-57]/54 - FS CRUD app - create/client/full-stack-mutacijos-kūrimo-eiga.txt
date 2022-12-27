@@ -1,5 +1,5 @@
 Client-side(FE):
-  1. Sukuriame vartotojo sasają  - atlikti veiksmui (Mygtukas, Dropdown'as ir t.t...) +
+  1. Sukuriame vartotojo sasają  - atlikti veiksmui (Mygtukas, Dropdown'as ir t.t...)
   2. Reaguojame į vartotojo veiksmą ir surenkame duomenis reikalingus siųsti užklausai 
   3. Siunčiame užklausa su suformuotais duomenimis
 
