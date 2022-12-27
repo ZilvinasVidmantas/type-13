@@ -9,7 +9,7 @@ const rootHtmlElement = document.querySelector('#root');
 
 if (rootHtmlElement === null) throw new Error('Error: #root element  was not found in HTML file.');
 
-API.getItems()
+API.getTodos()
   .then((items) => {
     const todoTableComponent = new TodoTableComponent({ items });
     const headerComponent = new HeaderComponent({

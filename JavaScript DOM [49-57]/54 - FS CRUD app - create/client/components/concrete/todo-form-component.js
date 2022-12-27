@@ -1,3 +1,5 @@
+import API from "../../api.js";
+
 class TodoFormComponent {
   htmlElement;
 
@@ -16,7 +18,7 @@ class TodoFormComponent {
     </div>
     <button type="submit" class="btn btn-primary w-100">Create</button>`;
 
-    this.htmlElement.addEventListener('submit', (event) => {
+    this.htmlElement.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       // Forma privalo turėti [name] atributus
@@ -28,11 +30,11 @@ class TodoFormComponent {
 
 
       // Validacija sekminga
+      await API.createTodo({ title, done })
 
 
       // validacija nesekminga
 
-      const dataForTodoCreation = { title, done };
 
       console.log(dataForTodoCreation)
 

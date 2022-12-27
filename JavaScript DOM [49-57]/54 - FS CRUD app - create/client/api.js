@@ -3,8 +3,10 @@ const formatError = (error) => {
   return error.message;
 }
 
+// TODO: sukurti suvienodintą header'ių siuntimą;
+
 const API = {
-  async getItems() {
+  async getTodos() {
     try {
       const response = await fetch('http://localhost:5000/items');
       const items = await response.json();
@@ -15,7 +17,7 @@ const API = {
     }
   },
 
-  async deleteItem({ id, title }) {
+  async deleteTodo({ id, title }) {
     try {
       const response = await fetch(`http://localhost:5000/items/${id}`, {
         method: 'DELETE',
@@ -26,6 +28,21 @@ const API = {
       const deletedItem = await response.json();
 
       return deletedItem;
+    } catch (error) {
+      throw formatError(error);
+    }
+  },
+
+  async createTodo(todoData) {
+    try {
+      const response = await fetch(`http://localhost:5000/items`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(todoData),
+      });
     } catch (error) {
       throw formatError(error);
     }
