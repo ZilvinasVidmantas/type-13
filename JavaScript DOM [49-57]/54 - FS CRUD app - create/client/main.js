@@ -3,6 +3,7 @@ import TodoTableComponent from './components/concrete/todo-table-component.js';
 import ContainerComponent from './components/wrappers/container-component.js';
 import HeaderComponent from './components/concrete/header-component.js';
 import TodoFormComponent from './components/concrete/todo-form-component.js';
+import FlexComponent from './components/wrappers/flex-component.js';
 
 const rootHtmlElement = document.querySelector('#root');
 
@@ -16,12 +17,17 @@ API.getItems()
       className: 'text-center my-4 fw-normal',
     });
     const todoFormComponent = new TodoFormComponent();
+    const flexComponent = new FlexComponent({
+      children: [
+        todoTableComponent.htmlElement,
+        todoFormComponent.htmlElement,
+      ]
+    });
 
     const container = new ContainerComponent({
       children: [
         headerComponent.htmlElement,
-        todoTableComponent.htmlElement,
-        todoFormComponent.htmlElement,
+        flexComponent.htmlElement,
       ],
     });
 
@@ -29,4 +35,6 @@ API.getItems()
       container.htmlElement,
     );
   })
-  .catch(alert);
+  .catch((err) => {
+    console.error(err);
+  });

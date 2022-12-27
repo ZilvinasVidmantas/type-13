@@ -6,7 +6,7 @@ class ContainerComponent {
     this.htmlElement.className = 'container';
     this.htmlElement.append(
       ...children,
-    )
+    );
   }
 }
 
