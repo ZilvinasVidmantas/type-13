@@ -4,6 +4,20 @@
 
 .todo-table {}
 
-.todo-table__last-cell{
-  width: 100px;
+.todo-table__last-cell {
+  width: 130px;
+}
+
+.todo-table__row input[type=checkbox],
+.todo-table__row .btn-success {
+  display: none;
+}
+
+.todo-table__row--editable {
+  background-color: #cdfdff;
+}
+
+.todo-table__row--editable input[type=checkbox],
+.todo-table__row--editable .btn-success {
+  display: inline-block;
 }
