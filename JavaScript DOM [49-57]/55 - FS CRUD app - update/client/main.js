@@ -34,9 +34,20 @@ const onCreateTodo = async ({ title, done }) => {
   }
 }
 
+const onUpdateTodo = async ({ id, props }) => {
+  try {
+    await ApiService.updateTodo({ id, props });
+  } catch (error) {
+    alert(error);
+  } finally {
+    const todos = await ApiService.getTodos();
+    todoTableComponent.renderTodos(todos);
+  }
+}
+
 ApiService.getTodos()
   .then((todos) => {
-    todoTableComponent = new TodoTableComponent({ todos, onDeleteTodo });
+    todoTableComponent = new TodoTableComponent({ todos, onDeleteTodo, onUpdateTodo });
     const headerComponent = new HeaderComponent({
       text: 'Task list',
       className: 'text-center my-4 fw-normal',

@@ -51,6 +51,26 @@ const ApiService = {
     } catch (error) {
       throw formatError(error);
     }
+  },
+
+  async updateTodo({ id, props}) {
+    try {
+      const response = await fetch(`http://localhost:5000/items/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(props),
+      });
+
+      if (response.status === 404) {
+        throw new Error(`Failed to update Todo`);
+      }
+
+    } catch (error) {
+      throw formatError(error);
+    }
   }
 };
 
