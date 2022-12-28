@@ -1,0 +1,10 @@
+1. Įsigilinti į šios pamokos atliktus darbus ir suformuoti klausimus
+  Siūlymai:
+    * peržiūrėti paskaitos įrašą(arba jos dalis) dar kartą
+    * bandyti rašyti kartu, viską kas daryta paskaitos metu
+    * bandytis rašyti nežiūrint (po to kai peržiūrėjote/perrašėt)
+    * išanalizuoti kodą pradedant main.js
+    * nusibraižyti veikimo schemą (geriausia ranka)
+
+2. Atlikti pamokas iš CAO.lt
+  * 19 pamoka.
