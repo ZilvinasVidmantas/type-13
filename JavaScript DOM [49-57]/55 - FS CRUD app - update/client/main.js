@@ -72,5 +72,5 @@ ApiService.getTodos()
     );
   })
   .catch((err) => {
-    console.error(err);
+    alert(err);
   });

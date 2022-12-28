@@ -1,14 +1,44 @@
+const SERVER_ADDRESS = 'http://localhost:5001';
+const TODOS_COLLECTION_NAME = 'todos';
+
 const formatError = (error) => {
   // Įvertinant visų tipų klaidas, grąžinti standartizuotą, vienodo formato (struktūros) klaidą
   return error.message;
 }
 
-// TODO: sukurti suvienodintą header'ių siuntimą;
+const requestSettings = {
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+}
+// Nebaigtas optimizavavimo pavyzdys
+// const createRequestHandler = ({ url = '', requestOptions = {} }) => {
+//   const finalUrl = `${SERVER_ADDRESS}${url}`;
+
+//   return async () => {
+//     try {
+//       const response = await fetch(finalUrl, {
+//         ...commonRequestOptions,
+//         ...requestOptions
+//       });
+
+//       if (response.status === 404) {
+//         throw new Error(`Resource was not found at: ${response.method} "${finalUrl}"`)
+//       }
+//       const data = await response.json();
+
+//       return data;
+//     } catch (error) {
+//       throw formatError(error);
+//     }
+//   }
+// }
 
 const ApiService = {
   async getTodos() {
     try {
-      const response = await fetch('http://localhost:5000/items');
+      const response = await fetch(`${SERVER_ADDRESS}/${TODOS_COLLECTION_NAME}`, requestSettings);
       const items = await response.json();
 
       return items;
@@ -19,7 +49,8 @@ const ApiService = {
 
   async deleteTodo({ id, title }) {
     try {
-      const response = await fetch(`http://localhost:5000/items/${id}`, {
+      const response = await fetch(`${SERVER_ADDRESS}/${TODOS_COLLECTION_NAME}/${id}`, {
+        ...requestSettings,
         method: 'DELETE',
       });
       if (response.status === 404) {
@@ -35,12 +66,9 @@ const ApiService = {
 
   async createTodo(todoData) {
     try {
-      const response = await fetch(`http://localhost:5000/items`, {
+      const response = await fetch(`${SERVER_ADDRESS}/${TODOS_COLLECTION_NAME}`, {
+        ...requestSettings,
         method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify(todoData),
       });
 
@@ -53,14 +81,11 @@ const ApiService = {
     }
   },
 
-  async updateTodo({ id, props}) {
+  async updateTodo({ id, props }) {
     try {
-      const response = await fetch(`http://localhost:5000/items/${id}`, {
+      const response = await fetch(`${SERVER_ADDRESS}/${TODOS_COLLECTION_NAME}/${id}`, {
+        ...requestSettings,
         method: 'PATCH',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify(props),
       });
 
