@@ -6,14 +6,14 @@ class TodoTableComponent {
 
   constructor({ todos, onDeleteTodo }) {
     this.htmlElement = document.createElement('table');
-    this.htmlElement.className = 'table table-striped shadow';
+    this.htmlElement.className = 'todo-table table table-striped shadow';
     this.htmlElement.innerHTML = `
     <thead class="bg-dark text-white">
       <tr>
         <th>Id</th>
         <th>Title</th>
         <th>Is Done</th>
-        <th>Actions</th>
+        <th class="todo-table__last-cell">Actions</th>
       </tr>
     </thead>
     <tbody></tbody>`;
@@ -28,12 +28,18 @@ class TodoTableComponent {
       <td>${id}</td>
       <td>${title}</td>
       <td>${done ? 'Yes' : 'No'}</td>
-      <td class="d-flex justify-content-end">
+      <td class="d-flex justify-content-end gap-2 todo-table__last-cell">
+        <button class="btn btn-warning btn-sm">⟳</button>
         <button class="btn btn-danger btn-sm">✕</button>
       </td>`;
 
     const delButton = tr.querySelector('.btn-danger');
     delButton.addEventListener('click', () => this.onDeleteTodo({ id, title }));
+
+    const updateButton = tr.querySelector('.btn-warning');
+    updateButton.addEventListener('click', () => {
+      console.log(id);
+    });
 
     return tr;
   }

@@ -1,3 +1,9 @@
 .todo-form {
   width: 300px;
 }
+
+.todo-table {}
+
+.todo-table__last-cell{
+  width: 100px;
+}

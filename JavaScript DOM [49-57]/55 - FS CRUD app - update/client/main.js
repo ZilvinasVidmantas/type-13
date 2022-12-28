@@ -12,7 +12,6 @@ if (rootHtmlElement === null) throw new Error('Error: #root element  was not fou
 let todoTableComponent;
 let todoFormComponent;
 
-// Concern Segregation
 const onDeleteTodo = async ({ id, title }) => {
   try {
     await ApiService.deleteTodo({ id, title });
@@ -24,7 +23,6 @@ const onDeleteTodo = async ({ id, title }) => {
   }
 }
 
-// Concern Segregation
 const onCreateTodo = async ({ title, done }) => {
   try {
     await ApiService.createTodo({ title, done });
@@ -38,7 +36,6 @@ const onCreateTodo = async ({ title, done }) => {
 
 ApiService.getTodos()
   .then((todos) => {
-    //                                                Dependency injection 
     todoTableComponent = new TodoTableComponent({ todos, onDeleteTodo });
     const headerComponent = new HeaderComponent({
       text: 'Task list',
