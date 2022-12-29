@@ -6,7 +6,7 @@
 3. ApiService aprašytos užklausos perpanaudojant serverio adresą ir bendrus užklausų nustatymus [1]
 4. Vieninga komponentų (components) struktūra [1]
   * taip pat vadinama savybė, kurioje saugomas komponento HTML elementas [0.5]
-  * vienodu principu priimi konstruktoriaus parametrai (objektu, jį destruktūrizuojant) [0.5]
+  * vienodu principu priimami konstruktoriaus parametrai (objektu, jį destruktūrizuojant) [0.5]
 5. Veikiantys CRUD veiksmai [5]
   * Atvaizdavimas [1]
   * Sukūrimas [1]
