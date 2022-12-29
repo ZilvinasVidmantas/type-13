@@ -7,7 +7,7 @@
 4. Vieninga komponentų (components) struktūra [1]
   * taip pat vadinama savybė, kurioje saugomas komponento HTML elementas [0.5]
   * vienodu principu priimi konstruktoriaus parametrai (objektu, jį destruktūrizuojant) [0.5]
-5. Veikiantys CRUD veiksmai [4]
+5. Veikiantys CRUD veiksmai [5]
   * Atvaizdavimas [1]
   * Sukūrimas [1]
   * Ištrynimas [1]
