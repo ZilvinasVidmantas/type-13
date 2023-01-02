@@ -1,4 +1,5 @@
 const age: number = 48;
-const surname: string = 'Viktorinas'
+const firstname: string = 'Gaudenas';
+const lastname: string = 'Viktorinas';
 
-console.log({ age, surname });
+console.log({ firstname, lastname, age });
