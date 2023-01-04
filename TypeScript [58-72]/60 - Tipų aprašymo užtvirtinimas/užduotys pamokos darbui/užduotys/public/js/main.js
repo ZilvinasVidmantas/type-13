@@ -15,6 +15,12 @@ console.groupCollapsed('1. Sukurkite funkciją, kuri atspausdiną tekstą didži
 console.groupEnd();
 console.groupCollapsed('2. Sukurkite funkciją, kuri grąžina pirmo ir antro parametro bendrą simbolių skaičių');
 {
+    const caclStringCombinedLength = (a, b) => a.length + b.length;
+    console.table({
+        'labas, abc': caclStringCombinedLength('labas', 'abc'),
+        'kranas, jonas': caclStringCombinedLength('kranas', 'jonas'),
+        'kebabas, kefyras': caclStringCombinedLength('kebabas', 'kefyras'),
+    });
 }
 console.groupEnd();
 console.groupCollapsed('3. Sukurkite funkciją, kuri grąžina <true>, jeigu žodyje yra 2 parametru perduoda raidė, priešingu atveju false');

@@ -65,7 +65,13 @@ console.groupEnd();
 // 10 min
 console.groupCollapsed('2. Sukurkite funkciją, kuri grąžina pirmo ir antro parametro bendrą simbolių skaičių');
 {
+  const caclStringCombinedLength = (a: string, b: string): number => a.length + b.length;
 
+  console.table({
+    'labas, abc': caclStringCombinedLength('labas', 'abc'),
+    'kranas, jonas': caclStringCombinedLength('kranas', 'jonas'),
+    'kebabas, kefyras': caclStringCombinedLength('kebabas', 'kefyras'),
+  });
 }
 console.groupEnd();
 
