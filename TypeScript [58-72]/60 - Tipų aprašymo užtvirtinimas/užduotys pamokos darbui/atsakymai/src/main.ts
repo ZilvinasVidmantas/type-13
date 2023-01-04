@@ -187,13 +187,13 @@ console.groupCollapsed('8. Sukurkite funkciją, kuri taiso pastraipos klaidas');
   );
 
   const decomposeText = (text: string): DecomposedText => {
-    const captures = [...text.matchAll(REGEX_SEPARATORS)];
+    const separatorsCaptures = [...text.matchAll(REGEX_SEPARATORS)];
 
     let from = -1;
-    const sentencesAndSeparators: DecomposedText = captures.reduce<DecomposedText>(
-      (prevSentencesAndSeparators, capture) => {
-        const [separator] = capture;
-        const index = capture.index as number;
+    const sentencesAndSeparators: DecomposedText = separatorsCaptures.reduce<DecomposedText>(
+      (prevSentencesAndSeparators, separatorCapture) => {
+        const [separator] = separatorCapture;
+        const index = separatorCapture.index as number;
         const sentence = text.slice(from + 1, index);
 
         prevSentencesAndSeparators.sentences.push(sentence);

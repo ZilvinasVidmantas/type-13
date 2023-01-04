@@ -133,7 +133,13 @@ console.groupEnd();
 // 15 min
 console.groupCollapsed('7. Sukurkite funkciją, kuri ištrintų pirmą surastą simbolį žodyje ir grąžintų pakeistą žodį');
 {
+  const removeLetter = (str: string, letter: string): string => str.replace(letter, '');
 
+  console.log({
+    labas: removeLetter('labas', 'b'),
+    kempiniukas: removeLetter('kempiniukas', 's'),
+    123123: removeLetter('123123', 'a'),
+  });
 }
 console.groupEnd();
 
@@ -141,9 +147,18 @@ console.groupEnd();
 //  8. Sukurkite funkciją, kuri pirmu parametru priimtų žodį, o antruoju - masyvą su raidėmis.
 //  Ši funkcija turi žodyje ištrinti visas raides, kurios perduotos antruoju parametru.
 //  Atlikus veiksmus, grąžinti pakeistą žodį
-console.groupCollapsed('8. Sukurkite funkciją, kuri pirmu parametru priimtų žodį, o antruoju - masyvą su raidėmis.');
+console.group('8. Sukurkite funkciją, kuri pirmu parametru priimtų žodį, o antruoju - masyvą su raidėmis.');
 {
+  const removeLetters = (word: string, letters: string[]): string => word
+    .split('')
+    .filter((wordLetter) => !letters.includes(wordLetter))
+    .join('');
 
+  console.table({
+    'labas, [a, b]': removeLetters('labas', ['a', 'b']), // 'ls'
+    'kempiniukas, [e, m, p, k]': removeLetters('kempiniukas', ['e', 'm', 'p', 'k']), // 'iniuas'
+    '123123, []': removeLetters('123123', []), // '123123'
+  });
 }
 console.groupEnd();
 
@@ -155,6 +170,21 @@ console.groupEnd();
 //  * Pašalinti tarpus aplink visą tekstą
 console.groupCollapsed('9. Sukurkite funkciją, kuri taiso pastraipos klaidas');
 {
+  const capitalizeFirstLetter = (word: string): string => word[0].toUpperCase() + word.slice(1);
 
+  const fixParagraph = (paragraph: string): string => paragraph
+    .split(/([.?!])/)
+    .slice(0, -1)
+    .map((sentence) => sentence.trim())
+    .map(capitalizeFirstLetter)
+    .join('')
+    .replaceAll(/\s+/g, ' ')
+    .replaceAll(' ,', ',')
+    .replaceAll(/([.?!,])([^\s])/g, '$1 $2');
+
+  const paragraph = '    labas , as jonas     . Tave      vadina Kęstu         ,taip? Taip ir žinojau  !';
+  const fixedParagraph = fixParagraph(paragraph);
+  console.log(paragraph);
+  console.log(fixedParagraph);
 }
 console.groupEnd();
