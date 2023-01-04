@@ -25,10 +25,22 @@ console.groupCollapsed('2. Sukurkite funkciją, kuri grąžina pirmo ir antro pa
 console.groupEnd();
 console.groupCollapsed('3. Sukurkite funkciją, kuri grąžina <true>, jeigu žodyje yra 2 parametru perduoda raidė, priešingu atveju false');
 {
+    const containsLetter = (str, letter) => str.includes(letter);
+    console.log({
+        'labas, a': containsLetter('labas', 'a'),
+        'kempė, a': containsLetter('kempė', 'a'),
+        'Finakolė, u': containsLetter('Finakolė', 'u'),
+    });
 }
 console.groupEnd();
 console.groupCollapsed('4. Sukurkite funkciją, kuri grąžina <true>, jeigu žodyje yra lyginis skaičius simbolių');
 {
+    const isEvenNumberOfLetters = (str) => str.length % 2 === 0;
+    console.table({
+        labas: isEvenNumberOfLetters('labas'),
+        kempės: isEvenNumberOfLetters('kempės'),
+        123123: isEvenNumberOfLetters('123123'),
+    });
 }
 console.groupEnd();
 console.groupCollapsed('5. Sukurkite funkciją, kuri grąžina balsių kiekį žodyje');
