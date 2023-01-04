@@ -55,17 +55,26 @@ console.groupCollapsed('5. Sukurkite funkciją, kuri grąžina balsių kiekį ž
 console.groupEnd();
 console.groupCollapsed('6. Sukurkite funkciją, kuri grąžina bet kokios raidės kiekį žodyje');
 {
+    const countLetters = (str, searchLetter) => {
+        const searchLetterRegex = new RegExp(searchLetter, 'g');
+        return str.match(searchLetterRegex)?.length ?? 0;
+    };
+    console.table({
+        'labas, a': countLetters('labas', 'a'),
+        'kempės, k': countLetters('kempės', 'k'),
+        '123123, z': countLetters('123123', 'z'),
+    });
 }
 console.groupEnd();
 console.groupCollapsed('7. Sukurkite funkciją, kuri ištrintų pirmą surastą simbolį žodyje ir grąžintų pakeistą žodį');
 {
 }
 console.groupEnd();
-console.groupCollapsed('7. Sukurkite funkciją, kuri pirmu parametru priimtų žodį, o antruoju - masyvą su raidėmis.');
+console.groupCollapsed('8. Sukurkite funkciją, kuri pirmu parametru priimtų žodį, o antruoju - masyvą su raidėmis.');
 {
 }
 console.groupEnd();
-console.groupCollapsed('8. Sukurkite funkciją, kuri taiso pastraipos klaidas');
+console.groupCollapsed('9. Sukurkite funkciją, kuri taiso pastraipos klaidas');
 {
 }
 console.groupEnd();
