@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 /* eslint-disable no-console */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-lone-blocks */
@@ -46,7 +47,18 @@
 // 10 min
 console.groupCollapsed('1. Sukurkite funkciją, kuri atspausdiną tekstą didžiosiomis raidėmis');
 {
+  // Funkcijos deklaravimas
+  const printCapitalized = (text: string): void => {
+    const wordCapitalized = text.toUpperCase();
+    console.log(wordCapitalized);
+  };
 
+  console.log('abcd:');
+  printCapitalized('abcd');
+  console.log('AAAA:');
+  printCapitalized('AAAA');
+  console.log('aBcD:');
+  printCapitalized('aBcD');
 }
 console.groupEnd();
 
@@ -56,7 +68,6 @@ console.groupCollapsed('2. Sukurkite funkciją, kuri grąžina pirmo ir antro pa
 
 }
 console.groupEnd();
-
 
 // 10 min
 console.groupCollapsed('3. Sukurkite funkciją, kuri grąžina <true>, jeigu žodyje yra 2 parametru perduoda raidė, priešingu atveju false');
