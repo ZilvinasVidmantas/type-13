@@ -38,10 +38,9 @@
     * Kodo tvarka ir aiškumas tiek pat svarbūs kiek funkcionalumas. Išmoksite tai dabar,
       arba kuomet negausite darbo dėl netvarkingo kodo.
     * Atlikę užduotį, užduokite sau klausimą: "Ar tai geriausia ką galėjau?"
-    * Įsigilinimas jūsų žinias iš supratimo perkelia į suvokimą. Tik suvokiant dalykus, galite
+    * Įsigilinimas jūsų žinias iš supratim1 perkelia į suvokimą. Tik suvokiant dalykus, galite
       žinias pritaikyti kūrybiškai. Iš to seka, kad užduoties atlikimo kokybė >>> užduočių kiekis
-    * Užduočių rezultatų pateikimas tike pat svarbus, kiek sprendimas.
-
+    * Užduočių rezultatų pateikimas tiek pat svarbus, kiek sprendimas.
 */
 
 // 10 min
