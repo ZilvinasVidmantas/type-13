@@ -45,6 +45,12 @@ console.groupCollapsed('4. Sukurkite funkciją, kuri grąžina <true>, jeigu žo
 console.groupEnd();
 console.groupCollapsed('5. Sukurkite funkciją, kuri grąžina balsių kiekį žodyje');
 {
+    const countVowelCount = (str) => str.match(/[aeiouyąęėįųū]/g)?.length ?? 0;
+    console.log({
+        aaaaa: countVowelCount('aaaaa'),
+        sasasasa: countVowelCount('sasasasa'),
+        aeyuioąčė: countVowelCount('aeyuioąčė'),
+    });
 }
 console.groupEnd();
 console.groupCollapsed('6. Sukurkite funkciją, kuri grąžina bet kokios raidės kiekį žodyje');

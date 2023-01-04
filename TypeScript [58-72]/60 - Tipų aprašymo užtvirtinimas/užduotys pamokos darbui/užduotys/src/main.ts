@@ -104,7 +104,13 @@ console.groupEnd();
 // 15 min
 console.groupCollapsed('5. Sukurkite funkciją, kuri grąžina balsių kiekį žodyje');
 {
+  const countVowelCount = (str: string): number => str.match(/[aeiouyąęėįųū]/g)?.length ?? 0;
 
+  console.log({
+    aaaaa: countVowelCount('aaaaa'),
+    sasasasa: countVowelCount('sasasasa'),
+    aeyuioąčė: countVowelCount('aeyuioąčė'),
+  });
 }
 console.groupEnd();
 
