@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 /* eslint-disable no-console */
 /* eslint-disable no-inner-declarations */
 /* eslint-disable no-lone-blocks */
@@ -74,7 +75,7 @@ console.groupEnd();
 console.group('2. Tipų rinkiniai - TUPLES');
 {
   // 15min
-  console.groupCollapsed('2.1. Sukurkite funkciją "getMinMax" kuri priima skaičių masyvą ir grąžina dviejų vietų tipų rinkinį. Pirmas grąžinamo rinkinio elementas - mažiausias skaičių masyvas, antras - didžiausias');
+  console.groupCollapsed('2.1. Sukurkite funkciją "getMinMax" kuri priima skaičių masyvą ir grąžina dviejų vietų tipų rinkinį. Pirmas grąžinamo rinkinio elementas - mažiausias skaičius masyve, antras - didžiausias');
   {
 
   }
@@ -95,7 +96,22 @@ console.group('3. Prielaidos - ASSERTIONS');
   // 15min
   console.groupCollapsed('3.1 Parašykite kodą, kuris parsiųstų skelbimus pasiekiamus šiuo adresu: "https://jsonplaceholder.typicode.com/posts?userId=1". Parsiųstus duomenis įrašykite į kintamajį "posts", darant parsiųstų duomenų tipo prielaidą. Prieš parsiunčiant duomenis apsirašykite "Post" tipą.');
   {
+    type Post = {
+      userId: number,
+      id: number,
+      title: string,
+      body: string,
+    };
 
+    // IIFE
+    (async () => {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts?userId=1');
+      const untypedData = await response.json();
+      const posts = untypedData as Post[];
+
+      console.log('3.1 Užduoties rezultatas - Post[]');
+      console.table(posts);
+    })();
   }
   console.groupEnd();
 

@@ -147,15 +147,16 @@ console.group('3. Prielaidos - ASSERTIONS');
       body: string,
     };
 
-    let posts: Post[];
-
     fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
       .then((response) => response.json())
-      .then(((postData) => {
-        posts = postData as Post[];
+      .then(((untypedData) => {
+        const posts = untypedData as Post[];
+
         console.log('3.1 Užduoties rezultatas - Post[]');
         console.table(posts);
       }));
+
+
     console.log('Rezultatas bus atspausdinama gale konsolės, nes siuntimas yra Promise...');
   }
   console.groupEnd();
