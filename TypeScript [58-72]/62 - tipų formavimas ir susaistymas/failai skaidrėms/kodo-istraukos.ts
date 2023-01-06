@@ -27,16 +27,22 @@
 
 
   interface Car {
-    id: number;
     model: string;
     makeYear: number;
+    priceInDollars: number
+    damaged: boolean,
+    naujaSavybe: boolean,
   };
+
+  type CarViewModel = {
+    [CarKey in keyof Car]: Car[CarKey] extends number ? string : Car[CarKey];
+  }
 
   type ReplaceObjectPropTypes<ObjectType, ToReplace, ReplaceWith> = {
     [Key in keyof ObjectType]: ObjectType[Key] extends ToReplace ? ReplaceWith : ObjectType[Key];
   }
 
-  type CarWithStringifiedNumberProps = ReplaceObjectPropTypes<Car, number, string>;
+  type CarViewModel2 = ReplaceObjectPropTypes<Car, number, string>;
 }
 
 // Tipų apjungimas ir “&” sankirtos operatorius
@@ -70,6 +76,38 @@
     // const stud: Student;
     // stud.
   }
+
+  type Fish = {
+    swim: () => void,
+    x: number[],
+    y: number,
+    z: number
+  }
+
+  type Snake = {
+    crowl: () => void,
+    x: string,
+    y: number,
+  }
+
+
+  // type Being = Fish & Omit<Snake, 'x' | 'crowl'> & { klp: string };
+
+  // const a: Being;
+
+
+  const sukurtiDuomenųBazėsIntegracija = () => {
+    // labai sudetinga funkcija, kuri sugeneruoja labai daug pagalbinių funkijų pagal parametrus
+    return {
+      getData: () => 7,
+      getLastId: 5845,
+      connect: () => (listener: string) => 'asdasdasd',
+    }
+  }
+
+
+  type DBIntegration = ReturnType<typeof sukurtiDuomenųBazėsIntegracija>;
+
 }
 
 // Tipų susaistymas
@@ -77,28 +115,36 @@
 
   {
     type Accommodation = {
-      address: string,
-      squares: number,
+      readonly address: string,
+      city?: string | number,
       type: 'Flat' | 'House' | 'Cottage',
+      niekadaTokiosNebus: never
     }
 
+    // https://stackoverflow.com/questions/50837171/remove-properties-of-a-type-from-another-type
+    type FilterOutNever<T> = Pick<T, {
+      [Key in keyof T]: T[Key] extends never ? never : Key
+    }[keyof T]>
 
 
+    type Incapsulate<ObjectType> = FilterOutNever<{
+      [Key in keyof ObjectType as Key extends string ? `get${Capitalize<Key>}` : Key]: Key extends string ? () => ObjectType[Key] : never
+    } & {
+        [Key in keyof ObjectType as Key extends string ? `set${Capitalize<Key>}` : Key]: Key extends string ? (value: ObjectType[Key]) => void : never
+      }>
 
-
+    type A = Incapsulate<{
+      1: number,
+      2: string,
+      address: string,
+    }>;
 
     type AccommodationGetters = {
-      [Key in keyof Accommodation as `get${Capitalize<Key>}`]: () => Accommodation[Key]
+      [Key in keyof Accommodation as `get${Capitalize<Key>} `]: () => Accommodation[Key]
     }
 
-
-
-
-
-
-
     type AccommodationSetters = {
-      [Key in keyof Accommodation as `set${Capitalize<Key>}`]: (val: Accommodation[Key]) => void
+      [Key in keyof Accommodation as `set${Capitalize<Key>} `]: (val: Accommodation[Key]) => void
     }
 
     type AccommodationIncapsulated =
