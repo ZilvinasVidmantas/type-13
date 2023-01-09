@@ -150,7 +150,7 @@
 
   const person1 = new Person(80, 89000);
   const person2 = new Person(75, 92000);
-  const peopleShelter = new Shelter<Person>();
+  const peopleShelter = new Shelter();
   peopleShelter.takeIn(person1);
   peopleShelter.takeIn(person2);
 
