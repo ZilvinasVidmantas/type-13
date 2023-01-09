@@ -63,15 +63,14 @@ console.groupCollapsed('2. Sukurkite funkciją "joinObjects", kuri apjungia 2 ob
     * JS: spread operator
 */
 {
-  type CommonProperties<T extends object, K extends Object> = keyof (T | K);
+  type CommonProperties<T, K> = keyof (T | K);
 
-  type Merge<T extends object, K extends Object> = Omit<T, CommonProperties<T, K>> & K;
+  type Merge<T, K> = Omit<T, CommonProperties<T, K>> & K;
 
-  const joinObjects = <T extends object, K extends object>(obj1: T, obj2: K)
-    : Merge<T, K> => ({
-      ...obj1,
-      ...obj2,
-    });
+  const joinObjects = <T, K>(obj1: T, obj2: K): Merge<T, K> => ({
+    ...obj1,
+    ...obj2,
+  });
 
   type Pig = {
     sayOinkOink(): void,
@@ -101,7 +100,7 @@ console.groupCollapsed('2. Sukurkite funkciją "joinObjects", kuri apjungia 2 ob
     legs: 8,
   };
 
-  const spiderPig = joinObjects(spider, pig);
+  const spiderPig = joinObjects(pig, spider);
 
   // Patikrinama, ar teisingai išsisaugojo tipas po apjungimo
   console.table({
@@ -259,7 +258,7 @@ console.groupCollapsed('5. Sukurkite funkciją "groupBy", kuri priima masyvą ob
     Type,
     Key extends keyof Type,
     Result extends GroupedByKey<Type, Key> = GroupedByKey<Type, Key>,
-    >(arr: Type[], key: Key): Result => {
+  >(arr: Type[], key: Key): Result => {
     const groupedByKey = arr.reduce<Result>((res, el) => {
       const resKey = el[key] as unknown as keyof Result;
 

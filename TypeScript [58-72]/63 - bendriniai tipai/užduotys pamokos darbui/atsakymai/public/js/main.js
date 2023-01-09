@@ -28,7 +28,7 @@ console.groupCollapsed('2. Sukurkite funkciją "joinObjects", kuri apjungia 2 ob
         weight: 80,
         legs: 8,
     };
-    const spiderPig = joinObjects(spider, pig);
+    const spiderPig = joinObjects(pig, spider);
     console.table({
         'spiderPig.legs': spiderPig.legs,
         'spiderPig.weight': spiderPig.weight,
