@@ -151,12 +151,10 @@ console.group('2. Eilės (Queue) duomenų struktūros kūrimas');
 
   // ↓↓↓ klasė ↓↓↓
   class Queue<T> {
-    private index: number;
+    // 1.
+    private index: number = -1;
 
     [i: number]: T | undefined;
-
-    // 1.
-    constructor() { this.index = -1; }
 
     // 4.
     get length() {
@@ -165,17 +163,15 @@ console.group('2. Eilės (Queue) duomenų struktūros kūrimas');
 
     // 2.
     enqueue(data: T) {
-      for (let i = this.index; i >= 0; i -= 1) {
-        this[i + 1] = this[i];
-      }
-
-      this[0] = data;
       this.index += 1;
+      this[this.index] = data;
     }
 
     // 3.
     dequeue(): T | undefined {
       const returnVal = this[0];
+      if (returnVal === undefined) return undefined
+
       for (let i = 1; i <= this.index; i += 1) {
         this[i - 1] = this[i];
       }
@@ -189,8 +185,8 @@ console.group('2. Eilės (Queue) duomenų struktūros kūrimas');
   // ↑↑↑ klasė ↑↑↑
 
   // ↓↓↓ bendri kintamieji ↓↓↓
-  const numberQueue = new Queue();
-  const stringQueue = new Queue();
+  const numberQueue = new Queue<number>();
+  const stringQueue = new Queue<string>();
   // ↑↑↑ bendri kintamieji ↑↑↑
 
   // 5 min.

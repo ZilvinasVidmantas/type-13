@@ -93,11 +93,11 @@ console.group('2. Eilės (Queue) duomenų struktūros kūrimas');
     {
     }
     console.groupEnd();
-    console.groupCollapsed('1.2. Sukurkite metodą "enqueue", kuris pridėtų elementą į struktūros priekį. Užtikrinkite kad kiti duomenys tavrkingai persislinktų ir indeksuotūsi');
+    console.groupCollapsed('1.2. Sukurkite metodą "enqueue", kuris pridėtų elementą į struktūros galą.');
     {
     }
     console.groupEnd();
-    console.groupCollapsed('1.3. Sukurkite metodą "pop", kuris išimtų elementą iš struktūros priekio. Užtikrinkite kad kiti duomenys tavrkingai persislinktų ir indeksuotūsi');
+    console.groupCollapsed('1.3. Sukurkite metodą "dequeue", kuris išimtų elementą iš struktūros priekio. Užtikrinkite kad kiti duomenys tavrkingai persislinktų ir indeksuotūsi');
     {
     }
     console.groupEnd();
