@@ -53,33 +53,106 @@ console.group('1. Dėklo (Stack) duomenų struktūros kūrimas');
 
   // ↓↓↓ klasė ↓↓↓
   class Stack<T> {
+    private index: number = -1;
+
+    [_index: number]: T | undefined;
+
+    get length(): number {
+      return this.index + 1;
+    }
+
+    push(element: T): void {
+      this.index += 1;
+      this[this.index] = element;
+    }
+
+    pop(): T | undefined {
+      const element = this[this.index];
+      if (element === undefined) return undefined;
+
+      delete this[this.index];
+      this.index -= 1;
+
+      return element;
+    }
   }
   // ↑↑↑ klasė ↑↑↑
 
   // ↓↓↓ bendri kintamieji ↓↓↓
+  let numberStack: Stack<number>;
+  let stringStack: Stack<string>;
   // ↑↑↑ bendri kintamieji ↑↑↑
 
   // 5 min.
   console.groupCollapsed('1.1. sukurkite konstruktorių, kuris nustatytų privačią savybę "index" į -1');
   {
+    numberStack = new Stack();
+    stringStack = new Stack();
+    console.log(numberStack);
   }
   console.groupEnd();
 
   // 20 min
   console.groupCollapsed('1.2. Sukurkite metodą "push", kuris pridėtų elementą į struktūros galą, t.y.: vienetu didesniu indeksu nei dabartinis index. Po pridėjimo index savybę padidinkite vienetu');
   {
+    numberStack.push(7);
+    numberStack.push(8);
+    numberStack.push(9);
+    console.log(numberStack);
+    stringStack.push('vienas');
+    stringStack.push('du');
   }
   console.groupEnd();
 
   // 20 min
   console.groupCollapsed('1.3. Sukurkite metodą "pop", kuris išimtų elementą iš struktūros galo. Po išėmimo index savybę sumažinkite vienetu');
   {
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    numberStack.push(7);
+    numberStack.push(8);
+    numberStack.push(9);
+
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+    console.log(numberStack.pop());
+
+    console.log(numberStack);
+    console.log(stringStack.pop());
   }
   console.groupEnd();
 
   // 10 min
-  console.groupCollapsed('1.4. Sukurkite get\'erį "length", kuris grąžintų elementų kiekį struktūroje');
+  console.group('1.4. Sukurkite get\'erį "length", kuris grąžintų elementų kiekį struktūroje');
   {
+    numberStack.push(5);
+    console.log(numberStack.length);
+    numberStack.push(5);
+    console.log(numberStack.length);
+    numberStack.push(5);
+    console.log(numberStack.length);
+    numberStack.push(5);
+    console.log(numberStack.length);
+    numberStack.pop();
+    console.log(numberStack.length);
+    numberStack.pop();
+    console.log(numberStack.length);
+    numberStack.pop();
+    console.log(numberStack.length);
+    numberStack.pop();
+    console.log(numberStack.length);
+    numberStack.pop();
+    console.log(numberStack.length);
+    numberStack.pop();
+    console.log(numberStack.length);
+
+    console.log('stringStack.length');
+    console.log(stringStack.length);
   }
   console.groupEnd();
 }

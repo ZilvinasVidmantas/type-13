@@ -2,32 +2,30 @@
 console.group('1. Dėklo (Stack) duomenų struktūros kūrimas');
 {
     class Stack {
-        index;
-        constructor() { this.index = -1; }
+        index = -1;
         get length() {
             return this.index + 1;
         }
-        push(data) {
+        push(element) {
             this.index += 1;
-            this[this.index] = data;
+            this[this.index] = element;
         }
         pop() {
-            const returnVal = this[this.index];
-            if (returnVal !== undefined) {
-                delete this[this.index];
-                this.index -= 1;
-            }
-            return returnVal;
+            const element = this[this.index];
+            if (element === undefined)
+                return undefined;
+            delete this[this.index];
+            this.index -= 1;
+            return element;
         }
     }
-    const numberStack = new Stack();
-    const stringStack = new Stack();
+    let numberStack;
+    let stringStack;
     console.groupCollapsed('1.1. sukurkite konstruktorių, kuris nustatytų privačią savybę "index" į -1');
     {
-        console.log({
-            numberStack,
-            stringStack,
-        });
+        numberStack = new Stack();
+        stringStack = new Stack();
+        console.log(numberStack);
     }
     console.groupEnd();
     console.groupCollapsed('1.2. Sukurkite metodą "push", kuris pridėtų elementą į struktūros galą, t.y.: vienetu didesniu indeksu nei dabartinis index. Po pridėjimo index savybę padidinkite vienetu');
@@ -35,31 +33,54 @@ console.group('1. Dėklo (Stack) duomenų struktūros kūrimas');
         numberStack.push(7);
         numberStack.push(8);
         numberStack.push(9);
-        stringStack.push('Viens');
-        stringStack.push('Du');
-        stringStack.push('Trys');
-        console.log({
-            numberStack,
-            stringStack,
-        });
+        console.log(numberStack);
+        stringStack.push('vienas');
+        stringStack.push('du');
     }
     console.groupEnd();
     console.groupCollapsed('1.3. Sukurkite metodą "pop", kuris išimtų elementą iš struktūros galo. Po išėmimo index savybę sumažinkite vienetu');
     {
-        const lastNumber = numberStack.pop();
-        const lastString = stringStack.pop();
-        console.log({
-            lastNumber,
-            lastString,
-        });
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        numberStack.push(7);
+        numberStack.push(8);
+        numberStack.push(9);
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack.pop());
+        console.log(numberStack);
+        console.log(stringStack.pop());
     }
     console.groupEnd();
-    console.groupCollapsed('1.4. Sukurkite get\'erį "length", kuris grąžintų elementų kiekį struktūroje');
+    console.group('1.4. Sukurkite get\'erį "length", kuris grąžintų elementų kiekį struktūroje');
     {
-        console.log({
-            'numberStack.length': numberStack.length,
-            'stringStack.length': stringStack.length,
-        });
+        numberStack.push(5);
+        console.log(numberStack.length);
+        numberStack.push(5);
+        console.log(numberStack.length);
+        numberStack.push(5);
+        console.log(numberStack.length);
+        numberStack.push(5);
+        console.log(numberStack.length);
+        numberStack.pop();
+        console.log(numberStack.length);
+        numberStack.pop();
+        console.log(numberStack.length);
+        numberStack.pop();
+        console.log(numberStack.length);
+        numberStack.pop();
+        console.log(numberStack.length);
+        numberStack.pop();
+        console.log(numberStack.length);
+        numberStack.pop();
+        console.log(numberStack.length);
+        console.log('stringStack.length');
+        console.log(stringStack.length);
     }
     console.groupEnd();
 }
@@ -67,68 +88,21 @@ console.groupEnd();
 console.group('2. Eilės (Queue) duomenų struktūros kūrimas');
 {
     class Queue {
-        index;
-        constructor() { this.index = -1; }
-        get length() {
-            return this.index + 1;
-        }
-        enqueue(data) {
-            for (let i = this.index; i >= 0; i -= 1) {
-                this[i + 1] = this[i];
-            }
-            this[0] = data;
-            this.index += 1;
-        }
-        dequeue() {
-            const returnVal = this[0];
-            for (let i = 1; i <= this.index; i += 1) {
-                this[i - 1] = this[i];
-            }
-            delete this[this.index];
-            this.index -= 1;
-            return returnVal;
-        }
     }
-    const numberQueue = new Queue();
-    const stringQueue = new Queue();
     console.groupCollapsed('1.1. sukurkite konstruktorių, kuris nustatytų privačią savybę "index" į -1');
     {
-        console.log({
-            numberStack: numberQueue,
-            stringStack: stringQueue,
-        });
     }
     console.groupEnd();
     console.groupCollapsed('1.2. Sukurkite metodą "enqueue", kuris pridėtų elementą į struktūros priekį. Užtikrinkite kad kiti duomenys tavrkingai persislinktų ir indeksuotūsi');
     {
-        numberQueue.enqueue(7);
-        numberQueue.enqueue(8);
-        numberQueue.enqueue(9);
-        stringQueue.enqueue('Viens');
-        stringQueue.enqueue('Du');
-        stringQueue.enqueue('Trys');
-        console.log({
-            numberStack: numberQueue,
-            stringStack: stringQueue,
-        });
     }
     console.groupEnd();
     console.groupCollapsed('1.3. Sukurkite metodą "pop", kuris išimtų elementą iš struktūros priekio. Užtikrinkite kad kiti duomenys tavrkingai persislinktų ir indeksuotūsi');
     {
-        const lastNumber = numberQueue.dequeue();
-        const lastString = stringQueue.dequeue();
-        console.log({
-            lastNumber,
-            lastString,
-        });
     }
     console.groupEnd();
     console.groupCollapsed('1.4. Sukurkite get\'erį "length", kuris grąžintų elementų kiekį struktūroje');
     {
-        console.log({
-            'numberQueue.length': numberQueue.length,
-            'stringQueue.length': stringQueue.length,
-        });
     }
     console.groupEnd();
 }
